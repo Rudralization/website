@@ -1,523 +1,384 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunil Jaisi</title>
-    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/newcss.css" />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunil Aryal | Passionate Programmer & Web Developer</title>
+  <meta name="description" content="Sunil Aryal — Passionate Programmer at Ulsan University of Science and Technology, Web Developer, and Writer." />
+  <meta name="author" content="Sunil Aryal" />
+  <meta name="theme-color" content="#ffffff" />
 
-  <body oncontextmenu="return false">
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">RUDRALIZATION</a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list grid">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">
-                <i class="uil uil-estate nav__icon"></i>Home
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">
-                <i class="uil uil-user nav__icon"></i>About
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">
-                <i class="uil uil-file-alt nav__icon"></i>Skills
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#qualification" class="nav__link">
-                <i class="uil uil-briefcase-alt nav__icon"></i>Qualification
-              </a>
-            </li>
-          
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">
-                <i class="uil uil-message nav__icon"></i>Contact Me
-              </a>
-            </li>
-          </ul>
-          <i class="uil uil-times nav__close" id="nav-close"></i>
-        </div>
-        <div class="nav__btns">
-          <!-- Theme change button -->
-          <i class="uil uil-moon change-theme" id="theme-button"></i>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="uil uil-apps"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- main-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">रुद्र<span class="logo__dot">.</span></a>
+      <ul class="nav__list" id="nav-list">
+        <li><a href="#home" class="nav__link active-link">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-button" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-    <main class="main">
-      <!--========================= Home =====================-->
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+      <defs>
+        <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+          <path d="M0.5,0 C0.7,0 0.86,0.08 0.94,0.22 C1,0.36 0.98,0.52 0.92,0.68 C0.86,0.84 0.74,0.98 0.58,1 C0.42,1 0.26,0.94 0.14,0.82 C0.04,0.7 0,0.56 0.02,0.4 C0.04,0.24 0.12,0.1 0.26,0.04 C0.38,0 0.44,0 0.5,0Z"/>
+        </clipPath>
+      </defs>
+    </svg>
 
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__content grid">
-            <div class="home__social">
-              <a
-                href="https://www.facebook.com/suniljaisii/"
-                target="_blank"
-                class="home__social-icon"
-              >
-                <i class="uil uil-facebook-alt home__icon"></i>
-              </a>
+    <section class="hero" id="home">
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
 
-              <a
-                href="https://github.com/rudralization"
-                target="_blank"
-                class="home__social-icon"
-              >
-                <i class="uil uil-github-alt home__icon"></i>
-              </a>
-            </div>
-            <div class="home__img">
-              <svg
-                class="home__blob"
-                viewBox="0 0 200 187"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <mask id="mask0" mask-type="alpha">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                      130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                      97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                      0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                 <image
-                    class="home__blob-img"
-                    x="-80"
-                    y="-35"
-                    xlink:href="assets/img/pro.png"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div class="home__data">
-              <h1 class="home__title">Hello there, I am Sunil Jaisi aka <strong>RUDRA</strong></h1>
-              <h3 class="home__subtitle">
-                Web Developer, Nepali Rapper and Poet
-              </h3>
-              <p class="home__description">
-                A passionate programmer and writer from Gulmi, Nepal
-              </p>
-              <a href="#contact" class="button button--flex">
-                Contact me<i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
+      <div class="hero__container">
+        <div class="hero__text fade-up">
+          <p class="hero__greeting">Hi, I am</p>
+          <p class="hero__name">Sunil</p>
+          <p class="hero__intro">a <span class="typed-text"></span><span class="typed-cursor">|</span></p>
+          <p class="hero__desc">
+            Computer Science student at Ulsan University of Science and Technology, passionate about 
+            web development, AI, and modern software solutions.
+          </p>
+          <div class="hero__buttons">
+            <a href="#about" class="btn btn--primary">About</a>
+            <a href="#contact" class="btn btn--ghost">Contact Me</a>
           </div>
 
-          <div class="home__scroll">
-            <a href="#about" class="home__scroll-button button--flex">
-              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-              <span class="home__scroll-name">Scroll down</span>
-              <i class="uil uil-arrow-down home__scroll-arrow"></i>
-            </a>
+          <div class="hero__badges">
+            <span class="tech-badge" style="--i:0">HTML</span>
+            <span class="tech-badge" style="--i:1">CSS</span>
+            <span class="tech-badge" style="--i:2">JavaScript</span>
+            <span class="tech-badge" style="--i:3">Python</span>
+            <span class="tech-badge" style="--i:4">Java</span>
+            <span class="tech-badge" style="--i:5">MySQL</span>
+            <span class="tech-badge" style="--i:6">AI</span>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat fade-up" data-count="15" data-suffix="+"><span class="stat-num">0</span> Projects Completed</div>
+            <div class="hero__stat fade-up" data-count="8" data-suffix="+"><span class="stat-num">0</span> Technologies Learned</div>
+            <div class="hero__stat fade-up" data-count="3" data-suffix="+"><span class="stat-num">0</span> Years of Experience</div>
           </div>
         </div>
-      </section>
 
-      <!--======================= About========================-->
+        <div class="hero__visual fade-up">
+          <div class="profile-card">
+            <div class="profile-card__inner">
+              <div class="profile-card__front">
+                <div class="profile-card__image-wrap">
+                  <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__image" />
+                </div>
+                <div class="profile-card__body">
+                  <div class="profile-body profile-body--home active">
+                    <h2 class="profile-body__name">Sunil Aryal</h2>
+                    <p class="profile-body__title">Passionate Programmer &middot; Web Developer</p>
+                    <button class="btn btn--primary touch-me-btn">Touch Me</button>
+                  </div>
+                  <div class="profile-body profile-body--about">
+                    <p class="profile-body__label">About</p>
+                    <p class="profile-body__text">IT student at Ulsan University of Science and Technology. Passionate about web development, AI, and modern software solutions.</p>
+                  </div>
+                  <div class="profile-body profile-body--education">
+                    <p class="profile-body__label">Education</p>
+                    <p class="profile-body__text">B.Tech in IT &middot; Ulsan University of Science and Technology (2025–Present)</p>
+                  </div>
+                  <div class="profile-body profile-body--skills">
+                    <p class="profile-body__label">Skills</p>
+                    <p class="profile-body__text">Frontend, Backend, AI &amp; ML &mdash; building modern digital solutions across the stack.</p>
+                  </div>
+                  <div class="profile-body profile-body--contact">
+                    <p class="profile-body__label">Contact</p>
+                    <p class="profile-body__text">aryalsunil44@gmail.com &middot; Ulsan, South Korea</p>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-card__back">
+                <div class="profile-card__back-header">
+                  <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
+                  <span class="profile-card__back-user">Sunil Aryal</span>
+                </div>
+                <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
+                <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
+                <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
+                <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
+                <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
+                <a href="mailto:aryalsunil44@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunil44@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="about section" id="about">
-        <h2 class="section__title">About Me</h2>
-        <span class="section__subtitle">My introduction</span>
-
-        <div class="about__container container grid">
-          <img src="assets\img\about.jpg" alt="" class="about__img" />
-
-          <div class="about__data">
-            <p class="about__description">
-              I am a undergraduate IT student and web developer based in Nepal. Sometimes I write poetries and make rap musics too. If you wanna connect me and make some vibe you can contact me below. 
+    <section class="about section" id="about">
+      <div class="container">
+        <h2 class="section__title fade-up">About</h2>
+        <div class="about__grid">
+          <div class="about__content">
+            <p class="fade-up">
+              I'm Sunil Aryal, an IT student at Ulsan University of Science and Technology 
+              in South Korea. I'm driven by a curiosity for how technology works and a desire to build 
+              software that improves lives.
             </p>
+            <p class="fade-up">
+              My interests span web development, database systems, and artificial intelligence. 
+              Currently focused on full-stack development and exploring AI integration in web applications.
+            </p>
+          </div>
 
-            <div class="about__info">
-              <div>
-                <span class="about__info-title">04+</span>
-                <span class="about__info-name">portfolio <br />websites</span>
-              </div>
-
-              <div>
-                <span class="about__info-title">50+</span>
-                <span class="about__info-name"
-                  >
-                  Nepali Poetries</span
-                >
-              </div>
-
-              <div>
-                <span class="about__info-title">10+</span>
-                <span class="about__info-name">Hiphop <br />rap musics</span>
-              </div>
+          <div class="hero-image">
+            <div class="blob">
+              <img src="assets/img/pro.png" alt="Profile Photo">
             </div>
 
-            <div class="about__buttons">
-              <a href="https://www.facebook.com/rudralization" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #e08a00; color: white; text-align: center; text-decoration: none; border-radius: 5px;">
-    Read My Poetry
-</a>
+            <div class="floating-card card1">
+              💻 Web Development
+            </div>
+            <div class="floating-card card2">
+              🤖 AI & Machine Learning
+            </div>
+            <div class="floating-card card3">
+              🎨 Graphic Design
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!--===================== SKILLS =====================-->
-
-      <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <span class="section__subtitle">what can i do?</span>
-
-        <div class="skills__container container grid">
-          <div>
-            <!--==================== Skill 1 =================-->
-            <div class="skills__content skills__open">
-              <div class="skills__header">
-                <i class="fas fa-pencil-ruler skills__icon"></i>
-
-                <div>
-                  <h1 class="skills__title">Programming Languages</h1>
-                </div>
-
-                <i class="uil uil-angle-down skills__arrow"></i>
-              </div>
-              
-
-              <div class="skills__list grid">
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Html</h3>
-                  </div>
-                  
-                </div>
-                
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">CSS</h3>
-                    </div>
-                    
-                  </div>
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">Javascript</h3>
-                    </div>
-                   
-                  </div>
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">Python</h3>
-                    </div>
-                </div>
-                
-                
-              </div>
+    <section class="education section" id="education">
+      <div class="container">
+        <h2 class="section__title fade-up">Education & Courses</h2>
+        <div class="education__list">
+          <div class="education__item fade-up">
+            <div class="education__dot"></div>
+            <div class="education__content">
+              <span class="education__year">2025 &ndash; Present</span>
+              <h3><i class="fas fa-graduation-cap"></i> B.Tech in Information Technology</h3>
+              <p>Ulsan University of Science and Technology, South Korea</p>
             </div>
+          </div>
+          <div class="education__item fade-up">
+            <div class="education__dot"></div>
+            <div class="education__content">
+              <span class="education__year">2023 &ndash; 2025</span>
+              <h3><i class="fas fa-laptop-code"></i> External Courses</h3>
+              <p>Online certifications, bootcamps, and self-directed learning in web development, AI, and databases.</p>
+            </div>
+          </div>
+          <div class="education__item fade-up">
+            <div class="education__dot"></div>
+            <div class="education__content">
+              <span class="education__year">2021 &ndash; 2023</span>
+              <h3><i class="fas fa-school"></i> Higher Secondary Education (SLC)</h3>
+              <p>KMGSS, Butwal &mdash; Science (Physics, Chemistry, Mathematics, Biology)</p>
+            </div>
+          </div>
+          <div class="education__item fade-up">
+            <div class="education__dot"></div>
+            <div class="education__content">
+              <span class="education__year">2021</span>
+              <h3><i class="fas fa-school"></i> Secondary Education (SEE)</h3>
+              <p>Riyale Secondary School, Gulmi &mdash; Ranked first in the local level</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-           
-                  
-                </div>
-                
-              </div>
+    <section class="skills section" id="skills">
+      <div class="skills__glow skills__glow--1"></div>
+      <div class="skills__glow skills__glow--2"></div>
+
+      <div class="container">
+        <div class="skills__header reveal">
+          <span class="skills__tag">Expertise</span>
+          <h2 class="section__title fade-up">Skills &amp; Technologies</h2>
+          <p class="skills__subtitle">Technologies I use to design, build, and deploy modern digital solutions.</p>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-card reveal" data-delay="0">
+            <div class="skill-card__bg"></div>
+            <div class="skill-card__icon"><i class="fas fa-palette"></i></div>
+            <h3 class="skill-card__title">Frontend Development</h3>
+            <div class="skill-card__details">
+            <div class="skill-card__level">
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-label">Advanced</span>
+            </div>
+            <p class="skill-card__desc">Building responsive, accessible interfaces with modern frameworks and design systems.</p>
+            <div class="skill-card__tags">
+              <span class="tag featured">JavaScript</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+            </div>
             </div>
           </div>
 
-          <div>
-            <!--==================== Skill 3 =================-->
-          
-          
-
-      <!--==================== Qualifications ==================-->
-
-      <section
-        class="qualification__section service__section"
-        id="qualification"
-      >
-        <h2 class="section__title">Qualification</h2>
-        <span class="section__subtitle">My educational journey</span>
-
-        <div
-          class="qualification__container container grid services__container"
-        >
-          <div class="qualification__tabs">
-            <div
-              class="qualification__button button--flex qualification__active"
-              data-target="#education"
-            >
-              <i class="uil uil-graduation-cap qualification__icon"></i>
-              Education
+          <div class="skill-card reveal" data-delay="1">
+            <div class="skill-card__bg"></div>
+            <div class="skill-card__icon"><i class="fas fa-server"></i></div>
+            <h3 class="skill-card__title">Backend Development</h3>
+            <div class="skill-card__details">
+            <div class="skill-card__level">
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot"></span>
+              <span class="level-label">Intermediate</span>
+            </div>
+            <p class="skill-card__desc">Developing robust APIs and server-side applications with Java and Python.</p>
+            <div class="skill-card__tags">
+              <span class="tag featured">Java</span>
+              <span class="tag featured">Python</span>
+              <span class="tag">REST APIs</span>
+            </div>
             </div>
           </div>
 
-          <div class="qualification__sections">
-            <!--====== Qualification Content 1 ======-->
-            <div
-              class="qualification__content qualifiation__active services__content"
-              data-content
-              id="education"
-            >
-              <!--====== Qualification 1 ======-->
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title">SEE</h3>
-                  <span class="qualification__subtitle"
-                    >Riyale SS</span> <br />Gulmi</span
-                  >
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    - 2021
-                  </div>
-                  <span
-                    class="button button--flex button--small button--link services__button"
-                  >
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        Class 10th Summary :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
-                          <p>
-                            Subjects studied: Science, Maths, English,
-                            Social Studies, Opt. Maths, HP, Nepali. 
-                          </p>
-                        </li>
-                        <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
-                          <p>Scored 3.95 GPA%</p>
-                        </li>
-                        <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
-                          <p>Local level topper</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-              </div>
-
-              <!--====== Qualification 2 ======-->
-              <div class="qualification__data">
-
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-                <div>
-                  <h3 class="qualification__title">SLC</h3>
-                  <span class="qualification__subtitle"
-                    >KMGSS<br />Butwal</span
-                  >
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    - 2021
-                  </div>
-                  <span
-                    class="button button--flex button--small button--link services__button"
-                  >
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        Class 12th Summary :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
-                          <p>
-                            Subjects studied: Physics, Chemistry, Maths,
-                            Biology, English, Nepali.
-                          </p>
-                        </li>
-                        <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
-                          <p>Scored 87.5%</p>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-
-              
-                       
-      
-      <!--===================== Contact Me =====================-->
-      <section class="contact section" id="contact">
-        <h2 class="section__title">Contact Me</h2>
-        <span class="section__subtitle">make a connection</span>
-
-        <div class="contact__container container grid">
-          <div>
-            <div class="contact__information">
-              <i class="uil uil-calling contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Phone</h3>
-                <span class="contact__subtitle"
-                  ><a href="tel:9766812752"></a>9766812752</span
-                >
-              </div>
+          <div class="skill-card featured-card reveal" data-delay="2">
+            <div class="skill-card__bg"></div>
+            <div class="skill-card__icon"><i class="fas fa-code"></i></div>
+            <h3 class="skill-card__title">Programming Languages</h3>
+            <div class="skill-card__details">
+            <div class="skill-card__level">
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-label">Advanced</span>
             </div>
-
-            <div class="contact__information">
-              <i class="uil uil-envelope-minus contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Email</h3>
-                <span class="contact__subtitle"
-                  >aryalsunil44@gmail.com</span
-                >
-              </div>
+            <p class="skill-card__desc">Writing clean, efficient code across multiple paradigms and platforms.</p>
+            <div class="skill-card__tags">
+              <span class="tag featured">Java</span>
+              <span class="tag featured">Python</span>
+              <span class="tag featured">JavaScript</span>
+              <span class="tag">SQL</span>
             </div>
-
-            <div class="contact__information">
-              <i class="uil uil-map-marker contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Address</h3>
-                <span class="contact__subtitle"
-                  >Butwal, Nepal</span
-                >
-              </div>
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
-            <div class="contact__inputs grid">
-              <div class="contact__content">
-                <label for="" class="content__label">Name</label>
-                <input type="text" class="contact__input" />
-              </div>
-
-              <div class="contact__content">
-                <label for="" class="content__label">Email</label>
-                <input type="Email" class="contact__input" />
-              </div>
+          <div class="skills__row">
+          <div class="skill-card reveal" data-delay="3">
+            <div class="skill-card__bg"></div>
+            <div class="skill-card__icon"><i class="fas fa-database"></i></div>
+            <h3 class="skill-card__title">Database &amp; Tools</h3>
+            <div class="skill-card__details">
+            <div class="skill-card__level">
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot"></span>
+              <span class="level-label">Intermediate</span>
             </div>
-
-            <div class="contact__content">
-              <label for="" class="content__label">Message</label>
-              <textarea
-                name=""
-                id=""
-                cols="0"
-                rows="7"
-                class="contact__input"
-              ></textarea>
+            <p class="skill-card__desc">Designing data models and managing development infrastructure with modern tooling.</p>
+            <div class="skill-card__tags">
+              <span class="tag featured">MySQL</span>
+              <span class="tag">DB Design</span>
+              <span class="tag">Git &amp; GitHub</span>
+              <span class="tag">Linux</span>
             </div>
-
-            <div>
-              <a
-                href=" mailto: aryalsunil44@gmail.com?subject=wanna connect &body=Hello"
-                class="button button--flex"
-              >
-                Send Message
-                <i class="uil uil-message button__icon"></i>
-              </a>
             </div>
+          </div>
+
+          <div class="skill-card reveal" data-delay="4">
+            <div class="skill-card__bg"></div>
+            <div class="skill-card__icon"><i class="fas fa-brain"></i></div>
+            <h3 class="skill-card__title">AI &amp; Machine Learning</h3>
+            <div class="skill-card__details">
+            <div class="skill-card__level">
+              <span class="level-dot fill"></span>
+              <span class="level-dot fill"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-label">Exploring</span>
+            </div>
+            <p class="skill-card__desc">Exploring ML algorithms, data analysis, and AI integration for intelligent apps.</p>
+            <div class="skill-card__tags">
+              <span class="tag featured">Python</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Neural Nets</span>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container">
+        <h2 class="section__title fade-up">Contact</h2>
+        <div class="contact__grid">
+          <div class="contact__info fade-up">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:aryalsunil44@gmail.com">aryalsunil44@gmail.com</a></p>
+            <p><i class="fas fa-map-pin"></i> Ulsan, South Korea</p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/rudralization" target="_blank" rel="noopener">rudralization</a></p>
+            <p><i class="fab fa-linkedin-in"></i> <a href="https://linkedin.com/in/suniljaisii" target="_blank" rel="noopener">suniljaisii</a></p>
+          </div>
+          <form class="contact__form fade-up" action="#" method="POST">
+            <div class="form__group">
+              <input type="text" name="name" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="form__group">
+              <input type="email" name="email" id="email" placeholder="Your Email" required />
+            </div>
+            <div class="form__group">
+              <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send</button>
           </form>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <!--================== Footer ===============-->
-    <footer class="footer">
-      <div class="footer__bg">
-        <div class="footer__container container grid">
-          <div>
-            <h1 class="footer__title">RUDRA</h1>
-            <span class="footer__subtitle"
-              >is Real and Rare</span
-            >
-          </div>
-
-        
-          <div class="footer__socials">
-            <a
-              href="https://www.instagram.com/suniljaisii/"
-              class="footer__social"
-              target="__blank"
-            >
-            <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a
-              href="https://facebook.com/suniljaisii/"
-              target="__blank"
-              class="footer__social"
-            >
-            <i class="fa-brands fa-facebook"></i>
-            </a>
-
-             <a
-              href="https://wa.link/0y20wx"
-              class="footer__social"
-              target="__blank"
-            >
-            <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a
-              href="https://youtube.com/@trbsunil/"
-              target="__blank"
-              class="footer__social"
-            >
-            <i class="fa-brands fa-youtube"></i>
-            </a>
-          </div>
+      <div class="profile-card__back contact-card">
+        <div class="profile-card__back-header">
+          <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
+          <span class="profile-card__back-user">Sunil Aryal</span>
         </div>
+        <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
+        <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
+        <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
+        <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
+        <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
+        <a href="mailto:aryalsunil44@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunil44@gmail.com</a>
+      </div>
+    </section>
 
-        <p class="footer__copy">&#169; 2023 All right reserved</p>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Sunil Aryal</p>
       </div>
     </footer>
+  </main>
 
-   
-
-    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
-    <script src="assets/ptj.js"></script>
-  </body>
+  <script src="assets/js/script.js"></script>
+</body>
 </html>
