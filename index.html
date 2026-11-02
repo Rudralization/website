@@ -1,388 +1,905 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunil Aryal | Passionate Programmer & Web Developer</title>
-  <meta name="description" content="Sunil Aryal — Passionate Programmer at Ulsan University of Science and Technology, Web Developer, and Writer." />
+  <title>Sunil Aryal | Macintosh OS Portfolio</title>
+  <meta name="description" content="Sunil Aryal (रुद्र.) — Computer Science & IT student at Ulsan University of Science and Technology, Passionate Programmer, Web Developer, and AI Explorer." />
   <meta name="author" content="Sunil Aryal" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#5a4bd1" />
 
-  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-
+  <link rel="icon" type="image/png" href="assets/img/pro.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body class="light">
+  <!-- SVG Filters: Old Website Blob ClipPath + Macintosh OS Liquid Glass Filter -->
+  <svg style="position:absolute;width:0;height:0;pointer-events:none" aria-hidden="true">
+    <defs>
+      <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.7,0 0.86,0.08 0.94,0.22 C1,0.36 0.98,0.52 0.92,0.68 C0.86,0.84 0.74,0.98 0.58,1 C0.42,1 0.26,0.94 0.14,0.82 C0.04,0.7 0,0.56 0.02,0.4 C0.04,0.24 0.12,0.1 0.26,0.04 C0.38,0 0.44,0 0.5,0Z"></path>
+      </clipPath>
+      <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise"></feTurbulence>
+        <feGaussianBlur in="noise" stdDeviation="2" result="blurred"></feGaussianBlur>
+        <feDisplacementMap in="SourceGraphic" in2="blurred" scale="70" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
 
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#home" class="nav__logo">रुद्र<span class="logo__dot">.</span></a>
-      <ul class="nav__list" id="nav-list">
-        <li><a href="#home" class="nav__link active-link">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#education" class="nav__link">Education</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="theme-toggle" id="theme-button" aria-label="Toggle theme">
-          <i class="fas fa-moon"></i>
+  <div class="macos-desktop" id="desktop">
+    <!-- Background Wallpaper -->
+    <img
+      src="assets/img/macos-monterey.jpg"
+      alt="macOS Monterey Wallpaper"
+      class="desktop-wallpaper"
+      id="desktop-wallpaper"
+      draggable="false"
+    />
+
+    <!-- ============================================================
+         TOP MENU BAR (macintosh-os style + Sunil Aryal identity)
+         ============================================================ -->
+    <header class="menubar" role="banner">
+      <div class="menubar__glass"></div>
+      <div class="menubar__left">
+        <a
+          href="#profile"
+          class="menubar__brand"
+          id="menubar-profile-trigger"
+          title="Open Profile Card"
+        >
+          <span class="menubar__badge">रुद्र<span class="menubar__dot">.</span></span>
+          <span class="menubar__name">Sunil Aryal</span>
+        </a>
+        <nav class="menubar__menus" aria-label="Quick sections">
+          <button type="button" class="menubar__menu-btn" data-open-window="finder">Finder</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="profile">Profile Card</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="projects">Projects</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="terminal">Terminal</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="mail">Contact</button>
+        </nav>
+      </div>
+
+      <div class="menubar__right">
+        <a href="mailto:aryalsunily@gmail.com" class="menubar__email" title="Email Sunil Aryal">
+          <i class="far fa-envelope"></i>
+          <span>aryalsunily@gmail.com</span>
+        </a>
+        <button
+          type="button"
+          class="menubar__status"
+          id="network-status-btn"
+          title="Connection: online - Click to refresh"
+          aria-label="Network status"
+        >
+          <i class="fas fa-wifi" id="network-icon"></i>
         </button>
-        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-          <i class="fas fa-bars"></i>
+        <button
+          type="button"
+          class="menubar__status"
+          id="menubar-theme-btn"
+          title="Toggle Light / Dark Mode"
+          aria-label="Toggle theme"
+        >
+          <i class="fas fa-moon" id="menubar-theme-icon"></i>
         </button>
+        <span class="menubar__divider"></span>
+        <span class="menubar__date" id="menubar-date">Mon, November 2</span>
+        <span class="menubar__divider"></span>
+        <span class="menubar__time" id="menubar-time">14:34</span>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         DESKTOP CENTERPIECE & SHORTCUTS
+         ============================================================ -->
+    <main class="desktop-stage" id="desktop-stage">
+      <!-- Desktop Shortcut Icons (top-left) -->
+      <div class="desktop-shortcuts" id="desktop-shortcuts" aria-label="Desktop shortcuts"></div>
+
+      <!-- Center Hero Typography (interactive per-letter hover like macintosh-os) -->
+      <div class="desktop-centerpiece">
+        <h1 class="centerpiece__title" id="centerpiece-title" aria-label="Sunil Aryal">
+          <!-- Populated dynamically with interactive hover letters -->
+          SuNiL ARyAL
+        </h1>
+        <p class="centerpiece__subtitle">
+          "a <span class="typed-text" id="typed-text">Developer</span><span class="typed-cursor">|</span> — crafting modern software &amp; AI solutions at UNIST, South Korea"
+        </p>
+      </div>
+
+      <!-- ============================================================
+           WINDOWS LAYER
+           ============================================================ -->
+      <div class="windows-layer" id="windows-layer">
+
+        <!-- 1. EXACT OLD DESIGN PROFILE CARD WINDOW (Opened via Profile icon on Dock) -->
+        <section
+          class="mac-window mac-window--profile"
+          id="window-profile"
+          data-window-id="profile"
+          role="dialog"
+          aria-label="Profile Card"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Profile Card"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Profile Card"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Flip Profile Card" title="Flip Card"><span>↻</span></button>
+            </div>
+            <span class="mac-window__title">Profile Card — सुनील अर्याल</span>
+            <button type="button" class="profile-flip-pill" id="profile-flip-toggle" title="Flip between Front &amp; Social Links">
+              <i class="fas fa-sync-alt"></i> Flip
+            </button>
+          </div>
+
+          <div class="mac-window__content mac-window__content--profile">
+            <!-- EXACT CARD USED IN OLD DESIGN -->
+            <div class="profile-card" id="exact-profile-card">
+              <div class="profile-card__inner" id="exact-profile-card-inner">
+                <div class="profile-card__front">
+                  <div class="profile-card__image-wrap">
+                    <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__image" />
+                  </div>
+                  <div class="profile-card__body">
+                    <div class="profile-body profile-body--home active">
+                      <h2 class="profile-body__name">Sunil Aryal</h2>
+                      <p class="profile-body__title">Passionate Programmer · Web Developer</p>
+                      <button class="btn btn--primary touch-me-btn" id="touch-me-btn" type="button">Touch Me</button>
+                    </div>
+                    <div class="profile-body profile-body--about">
+                      <p class="profile-body__label">About</p>
+                      <p class="profile-body__text">IT student at Ulsan University of Science and Technology. Passionate about web development, AI, and modern software solutions.</p>
+                    </div>
+                    <div class="profile-body profile-body--education">
+                      <p class="profile-body__label">Education</p>
+                      <p class="profile-body__text">B.Tech in IT · Ulsan University of Science and Technology (2025–Present)</p>
+                    </div>
+                    <div class="profile-body profile-body--skills">
+                      <p class="profile-body__label">Skills</p>
+                      <p class="profile-body__text">Frontend, Backend, AI &amp; ML — building modern digital solutions across the stack.</p>
+                    </div>
+                    <div class="profile-body profile-body--contact">
+                      <p class="profile-body__label">Contact</p>
+                      <p class="profile-body__text">aryalsunily@gmail.com · Ulsan, South Korea</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="profile-card__back">
+                  <div class="profile-card__back-header">
+                    <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
+                    <span class="profile-card__back-user">Sunil Aryal</span>
+                  </div>
+                  <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
+                  <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
+                  <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
+                  <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
+                  <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
+                  <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunily@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. FINDER WINDOW (About, Stats, Education & Skills Overview) -->
+        <section
+          class="mac-window"
+          id="window-finder"
+          data-window-id="finder"
+          role="dialog"
+          aria-label="Finder"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Finder"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Finder"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Finder"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Finder — Sunil Aryal</span>
+          </div>
+          <div class="mac-window__content finder-content">
+            <div class="finder-hero">
+              <div class="finder-avatar-wrap">
+                <img src="assets/img/pro.png" alt="Sunil Aryal" class="finder-avatar" />
+              </div>
+              <div class="finder-bio">
+                <h3>Sunil Aryal <span class="finder-badge">रुद्र.</span></h3>
+                <p>
+                  Computer Science &amp; Information Technology student at <strong>Ulsan University of Science and Technology (UNIST)</strong> in South Korea.
+                  Driven by a curiosity for how technology works and a desire to build software that improves lives.
+                </p>
+              </div>
+            </div>
+
+            <div class="finder-actions">
+              <button type="button" class="finder-pill" data-open-window="profile">
+                <i class="fas fa-id-badge"></i> Open Old Profile Card
+              </button>
+              <button type="button" class="finder-pill" data-open-window="mail">
+                <i class="far fa-envelope"></i> Contact me
+              </button>
+              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="finder-pill finder-pill--icon" title="GitHub @rudralization">
+                <i class="fab fa-github"></i>
+                <i class="fas fa-star star-accent"></i>
+              </a>
+            </div>
+
+            <!-- Stats from Sunil's website -->
+            <div class="finder-stats">
+              <div class="finder-stat">
+                <span class="finder-stat__num">15+</span>
+                <span class="finder-stat__label">Projects Completed</span>
+              </div>
+              <div class="finder-stat">
+                <span class="finder-stat__num">8+</span>
+                <span class="finder-stat__label">Technologies Learned</span>
+              </div>
+              <div class="finder-stat">
+                <span class="finder-stat__num">3+</span>
+                <span class="finder-stat__label">Years of Experience</span>
+              </div>
+            </div>
+
+            <!-- Tech Stack Chips (macintosh-os Finder style) -->
+            <div class="finder-tech-grid">
+              <div class="finder-tech-item"><i class="fab fa-html5" style="color:#e34f26"></i><span>HTML5</span></div>
+              <div class="finder-tech-item"><i class="fab fa-css3-alt" style="color:#1572b6"></i><span>CSS3</span></div>
+              <div class="finder-tech-item"><i class="fab fa-js-square" style="color:#f7df1e"></i><span>JavaScript</span></div>
+              <div class="finder-tech-item"><i class="fab fa-python" style="color:#3776ab"></i><span>Python</span></div>
+              <div class="finder-tech-item"><i class="fab fa-java" style="color:#f89820"></i><span>Java</span></div>
+              <div class="finder-tech-item"><i class="fas fa-database" style="color:#00758f"></i><span>MySQL</span></div>
+              <div class="finder-tech-item"><i class="fas fa-brain" style="color:#7c6cf0"></i><span>AI &amp; ML</span></div>
+              <div class="finder-tech-item"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git &amp; GitHub</span></div>
+              <div class="finder-tech-item"><i class="fab fa-linux" style="color:#fcc624"></i><span>Linux</span></div>
+              <div class="finder-tech-item"><i class="fas fa-network-wired" style="color:#2ecc71"></i><span>REST APIs</span></div>
+            </div>
+
+            <!-- Detailed Skill Cards from Sunil's website -->
+            <h4 class="finder-section-heading">Skills &amp; Expertise</h4>
+            <div class="finder-skills-list">
+              <div class="mac-skill-card">
+                <div class="mac-skill-card__head">
+                  <span><i class="fas fa-palette"></i> Frontend Development</span>
+                  <span class="mac-skill-dots" title="Advanced">
+                    <i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i>
+                    <em>Advanced</em>
+                  </span>
+                </div>
+                <p>Building responsive, accessible interfaces with modern frameworks and design systems.</p>
+              </div>
+              <div class="mac-skill-card">
+                <div class="mac-skill-card__head">
+                  <span><i class="fas fa-server"></i> Backend Development</span>
+                  <span class="mac-skill-dots" title="Intermediate">
+                    <i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i><i class="dot"></i>
+                    <em>Intermediate</em>
+                  </span>
+                </div>
+                <p>Developing robust APIs and server-side applications with Java and Python.</p>
+              </div>
+              <div class="mac-skill-card">
+                <div class="mac-skill-card__head">
+                  <span><i class="fas fa-code"></i> Programming Languages</span>
+                  <span class="mac-skill-dots" title="Advanced">
+                    <i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i>
+                    <em>Advanced</em>
+                  </span>
+                </div>
+                <p>Writing clean, efficient code across multiple paradigms from scripting to OOP (Python, Java, JS, C).</p>
+              </div>
+              <div class="mac-skill-card">
+                <div class="mac-skill-card__head">
+                  <span><i class="fas fa-database"></i> Database &amp; Tools</span>
+                  <span class="mac-skill-dots" title="Intermediate">
+                    <i class="dot fill"></i><i class="dot fill"></i><i class="dot fill"></i><i class="dot"></i>
+                    <em>Intermediate</em>
+                  </span>
+                </div>
+                <p>Designing data models and managing development infrastructure with MySQL, Git &amp; Linux.</p>
+              </div>
+              <div class="mac-skill-card">
+                <div class="mac-skill-card__head">
+                  <span><i class="fas fa-brain"></i> AI &amp; Machine Learning</span>
+                  <span class="mac-skill-dots" title="Exploring">
+                    <i class="dot fill"></i><i class="dot fill"></i><i class="dot"></i><i class="dot"></i>
+                    <em>Exploring</em>
+                  </span>
+                </div>
+                <p>Exploring ML algorithms, data analysis, and AI integration for intelligent web applications.</p>
+              </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 3. LAUNCHPAD WINDOW (All Socials & Apps) -->
+        <section
+          class="mac-window"
+          id="window-launchpad"
+          data-window-id="launchpad"
+          role="dialog"
+          aria-label="Launchpad"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Launchpad"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Launchpad"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Launchpad"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Launchpad</span>
+          </div>
+          <div class="mac-window__content launchpad-grid" id="launchpad-grid">
+            <!-- Populated from JS with Sunil's social links + internal apps -->
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 4. PHOTOS WINDOW (Education Timeline & Creative Gallery) -->
+        <section
+          class="mac-window"
+          id="window-photos"
+          data-window-id="photos"
+          role="dialog"
+          aria-label="Photos &amp; Education"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Photos"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Photos"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Photos"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Photos &amp; Education Journey</span>
+          </div>
+          <div class="mac-window__content photos-content">
+            <div class="photos-spotlight">
+              <div class="photos-blob-wrap">
+                <img src="assets/img/pro.png" alt="Sunil Aryal" class="photos-blob-img" />
+                <span class="floating-pill pill-1">💻 Web Development</span>
+                <span class="floating-pill pill-2">🤖 AI &amp; Machine Learning</span>
+                <span class="floating-pill pill-3">🎨 Graphic Design</span>
+              </div>
+              <div class="photos-spotlight__text">
+                <h3>About Sunil Aryal</h3>
+                <p>
+                  I'm Sunil Aryal, an IT student at Ulsan University of Science and Technology in South Korea.
+                  My interests span web development, database systems, and artificial intelligence. Currently focused on
+                  full-stack development and exploring AI integration in web applications.
+                </p>
+              </div>
+            </div>
+
+            <h4 class="finder-section-heading">Education &amp; Courses Timeline</h4>
+            <div class="mac-timeline">
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2025 – Present</span>
+                  <h5><i class="fas fa-graduation-cap"></i> B.Tech in Information Technology</h5>
+                  <p>Ulsan University of Science and Technology, South Korea</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2023 – 2025</span>
+                  <h5><i class="fas fa-laptop-code"></i> External Courses</h5>
+                  <p>Online certifications, bootcamps, and self-directed learning in web development, AI, and databases.</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2021 – 2023</span>
+                  <h5><i class="fas fa-school"></i> Higher Secondary Education (SLC)</h5>
+                  <p>KMGSS, Butwal — Science (Physics, Chemistry, Mathematics, Biology)</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2021</span>
+                  <h5><i class="fas fa-award"></i> Secondary Education (SEE)</h5>
+                  <p>Riyale Secondary School, Gulmi — Ranked first in the local level</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 5. TERMINAL WINDOW (Interactive zsh shell) -->
+        <section
+          class="mac-window"
+          id="window-terminal"
+          data-window-id="terminal"
+          role="dialog"
+          aria-label="Terminal"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Terminal"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Terminal"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Terminal"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Terminal — zsh</span>
+          </div>
+          <div class="mac-window__content terminal-content" id="terminal-body">
+            <div class="terminal-hint">Type <code>help</code> to list available commands (try <code>whoami</code>, <code>skills</code>, <code>education</code>, <code>card</code>, <code>social</code>).</div>
+            <div id="terminal-history"></div>
+            <div class="terminal-prompt-line">
+              <span class="terminal-prompt">macbook@Sunils-MacBook-Pro ~ %</span>
+              <input
+                type="text"
+                id="terminal-input"
+                class="terminal-input"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Terminal command input"
+              />
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 6. MAIL WINDOW (Contact Form & Direct Info) -->
+        <section
+          class="mac-window"
+          id="window-mail"
+          data-window-id="mail"
+          role="dialog"
+          aria-label="Mail"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Mail"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Mail"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Mail"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Mail — Contact Sunil Aryal</span>
+          </div>
+          <div class="mac-window__content mail-content">
+            <form id="mail-form" class="mail-form">
+              <div class="mail-row">
+                <span class="mail-label">To:</span>
+                <span class="mail-recipient">aryalsunily@gmail.com</span>
+                <a href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B" target="_blank" rel="noopener" class="mail-whatsapp">
+                  <i class="fab fa-whatsapp"></i> WhatsApp @aryalsunil
+                </a>
+              </div>
+              <div class="mail-row">
+                <label class="mail-label" for="mail-subject">Subject:</label>
+                <input type="text" id="mail-subject" placeholder="Enter subject" required />
+              </div>
+              <div class="mail-row">
+                <label class="mail-label" for="mail-from">From:</label>
+                <input type="email" id="mail-from" placeholder="Your email address" required />
+              </div>
+              <div class="mail-body-wrap">
+                <textarea id="mail-message" rows="5" placeholder="Enter your message for Sunil Aryal (Ulsan, South Korea)..." required></textarea>
+              </div>
+              <div class="mail-footer">
+                <span class="mail-location"><i class="fas fa-map-pin"></i> Ulsan, South Korea</span>
+                <button type="submit" class="mail-send-btn">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 7. SETTINGS WINDOW (Light/Dark Mode, Cursor Spark/Liquid Glass, Audio) -->
+        <section
+          class="mac-window"
+          id="window-settings"
+          data-window-id="settings"
+          role="dialog"
+          aria-label="Settings"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Settings"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Settings"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Settings"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Settings</span>
+          </div>
+          <div class="mac-window__content settings-content">
+            <h4>Display</h4>
+            <div class="settings-theme-cards">
+              <button type="button" class="theme-card active" data-set-theme="light" aria-label="Light mode">
+                <div class="theme-card__preview theme-card__preview--light">
+                  <div class="preview-dots"><i></i><i></i><i></i></div>
+                  <div class="preview-line"></div>
+                  <div class="preview-box"></div>
+                </div>
+                <span>Light Mode</span>
+              </button>
+              <button type="button" class="theme-card" data-set-theme="dark" aria-label="Dark mode">
+                <div class="theme-card__preview theme-card__preview--dark">
+                  <div class="preview-dots"><i></i><i></i><i></i></div>
+                  <div class="preview-line"></div>
+                  <div class="preview-box"></div>
+                </div>
+                <span>Dark Mode</span>
+              </button>
+            </div>
+
+            <h4>Profile Card Section State</h4>
+            <p class="settings-hint">Switch the active section text inside the Front of your Old Profile Card:</p>
+            <div class="settings-pills" id="profile-section-pills">
+              <button type="button" class="settings-pill active" data-card-section="home">Home (Touch Me)</button>
+              <button type="button" class="settings-pill" data-card-section="about">About</button>
+              <button type="button" class="settings-pill" data-card-section="education">Education</button>
+              <button type="button" class="settings-pill" data-card-section="skills">Skills</button>
+              <button type="button" class="settings-pill" data-card-section="contact">Contact</button>
+            </div>
+
+            <h4>Experimental Features</h4>
+            <div class="settings-toggles">
+              <label class="settings-toggle-row">
+                <span>Falling Star Spark Cursor (from old design)</span>
+                <input type="checkbox" id="toggle-star-cursor" checked />
+              </label>
+              <label class="settings-toggle-row">
+                <span>Liquid Glass Cursor lens</span>
+                <input type="checkbox" id="toggle-glass-cursor" />
+              </label>
+              <label class="settings-toggle-row">
+                <span>UI Sound Effects</span>
+                <input type="checkbox" id="toggle-sound" checked />
+              </label>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 8. SPOTIFY WINDOW -->
+        <section
+          class="mac-window"
+          id="window-spotify"
+          data-window-id="spotify"
+          role="dialog"
+          aria-label="Spotify"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Spotify"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Spotify"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Spotify"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Spotify — Coding Vibes</span>
+          </div>
+          <div class="mac-window__content spotify-content">
+            <div class="spotify-banner">
+              <img src="assets/img/pro.png" alt="Sunil Aryal" class="spotify-avatar" />
+              <div class="spotify-banner__info">
+                <h3>Rudralization</h3>
+                <p>Late-Night Coding · Full-Stack &amp; AI</p>
+                <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="spotify-follow-btn">Follow</a>
+              </div>
+            </div>
+            <div class="spotify-tracks">
+              <h4>Focus Tracks &amp; Channels</h4>
+              <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="spotify-track">
+                <span class="spotify-track__num">01</span>
+                <div class="spotify-track__meta">
+                  <strong>Lo-Fi Beats to Code &amp; Debug To</strong>
+                  <span>UNIST Study Sessions</span>
+                </div>
+                <i class="fas fa-play-circle"></i>
+              </a>
+              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="spotify-track">
+                <span class="spotify-track__num">02</span>
+                <div class="spotify-track__meta">
+                  <strong>Neural Networks &amp; Midnight Coffee</strong>
+                  <span>Python · AI &amp; ML Exploration</span>
+                </div>
+                <i class="fas fa-play-circle"></i>
+              </a>
+              <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="spotify-track">
+                <span class="spotify-track__num">03</span>
+                <div class="spotify-track__meta">
+                  <strong> shipping-to-production.wav</strong>
+                  <span>Full-Stack Web Engineering</span>
+                </div>
+                <i class="fas fa-play-circle"></i>
+              </a>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 9. PAINT STUDIO WINDOW -->
+        <section
+          class="mac-window"
+          id="window-paint"
+          data-window-id="paint"
+          role="dialog"
+          aria-label="Paint Studio"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Paint Studio"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Paint Studio"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Paint Studio"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Paint Studio</span>
+          </div>
+          <div class="mac-window__content paint-content">
+            <div class="paint-toolbar">
+              <button type="button" class="paint-btn active" id="paint-brush-btn"><i class="fas fa-paint-brush"></i> Brush</button>
+              <button type="button" class="paint-btn" id="paint-eraser-btn"><i class="fas fa-eraser"></i> Eraser</button>
+              <input type="range" id="paint-size" min="2" max="28" value="5" title="Brush size" />
+              <div class="paint-swatches" id="paint-swatches"></div>
+              <button type="button" class="paint-btn" id="paint-clear-btn"><i class="fas fa-trash"></i> Clear</button>
+            </div>
+            <canvas id="paint-canvas" width="520" height="300"></canvas>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 10. PROJECTS WINDOW (Downloads Folder Icon on Dock) -->
+        <section
+          class="mac-window"
+          id="window-projects"
+          data-window-id="projects"
+          role="dialog"
+          aria-label="Projects"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Projects"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Projects"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Projects"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Projects — 15+ Completed</span>
+          </div>
+          <div class="mac-window__content projects-content">
+            <div class="projects-grid">
+              <article class="project-card">
+                <div class="project-card__preview" style="background:linear-gradient(135deg,#5a4bd1,#9b59b6)">
+                  <i class="fab fa-apple"></i>
+                </div>
+                <div class="project-card__body">
+                  <h4>Macintosh OS Portfolio</h4>
+                  <span class="project-card__type">Personal Portfolio · 2026</span>
+                  <p>Interactive macOS Monterey desktop portfolio featuring draggable windows, zsh Terminal, and 3D flip Profile Card.</p>
+                  <div class="project-card__tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__preview" style="background:linear-gradient(135deg,#0984e3,#00cec9)">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-card__body">
+                  <h4>AI &amp; ML Web Integrations</h4>
+                  <span class="project-card__type">AI Research &amp; Apps · UNIST</span>
+                  <p>Intelligent web applications combining Python machine learning pipelines, data analysis, and modern web UIs.</p>
+                  <div class="project-card__tags"><span>Python</span><span>AI/ML</span><span>REST APIs</span></div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__preview" style="background:linear-gradient(135deg,#00b894,#55efc4)">
+                  <i class="fas fa-database"></i>
+                </div>
+                <div class="project-card__body">
+                  <h4>Full-Stack Database Systems</h4>
+                  <span class="project-card__type">Backend &amp; Relational DB</span>
+                  <p>Java &amp; Python backend services backed by normalized MySQL schemas, authentication, and responsive dashboards.</p>
+                  <div class="project-card__tags"><span>Java</span><span>MySQL</span><span>Python</span></div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__preview" style="background:linear-gradient(135deg,#e17055,#fdcb6e)">
+                  <i class="fas fa-pen-nib"></i>
+                </div>
+                <div class="project-card__body">
+                  <h4>Creative UI &amp; Graphic Design</h4>
+                  <span class="project-card__type">Design Systems</span>
+                  <p>Custom interactive cards, SVG morphing blobs, micro-animations, and brand identities.</p>
+                  <div class="project-card__tags"><span>UI/UX</span><span>SVG</span><span>CSS3</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 11. BIN WINDOW -->
+        <section
+          class="mac-window"
+          id="window-bin"
+          data-window-id="bin"
+          role="dialog"
+          aria-label="Bin"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Bin"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Bin"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Bin"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Bin</span>
+          </div>
+          <div class="mac-window__content bin-content">
+            <div class="bin-grid">
+              <button type="button" class="bin-item" data-open-window="profile">
+                <i class="fas fa-id-card"></i>
+                <span>Old_Profile_Card_v1.card</span>
+              </button>
+              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="bin-item">
+                <i class="fas fa-file-pdf"></i>
+                <span>Sunil_Aryal_Resume_2026.pdf</span>
+              </a>
+              <a href="https://rudralization.github.io/website/" target="_blank" rel="noopener" class="bin-item">
+                <i class="fas fa-file-code"></i>
+                <span>Classic_Portfolio_Backup.html</span>
+              </a>
+              <div class="bin-item">
+                <i class="fas fa-mug-hot"></i>
+                <span>empty_coffee_cups (42).log</span>
+              </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ============================================================
+         FLOATING macOS DOCK (with dedicated Profile Card Icon!)
+         ============================================================ -->
+    <nav class="dock-container" aria-label="macOS Dock">
+      <div class="dock" id="dock">
+        <div class="dock__glass with-lg"></div>
+        <div class="dock__items">
+          <!-- PROFILE ICON ON DOCK — opens the exact Profile Card from the old design -->
+          <button
+            type="button"
+            class="dock-item"
+            data-dock-window="profile"
+            aria-label="Profile Card"
+          >
+            <span class="dock-tooltip">Profile Card</span>
+            <span class="dock-icon dock-icon--profile">
+              <img src="assets/img/pro.png" alt="Profile Card" draggable="false" />
+            </span>
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="finder" aria-label="Finder">
+            <span class="dock-tooltip">Finder</span>
+            <img src="assets/icons/finder.png" alt="Finder" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="launchpad" aria-label="Launchpad">
+            <span class="dock-tooltip">Launchpad</span>
+            <img src="assets/icons/launchpad.png" alt="Launchpad" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="photos" aria-label="Photos">
+            <span class="dock-tooltip">Photos</span>
+            <img src="assets/icons/photos.png" alt="Photos" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="terminal" aria-label="Terminal">
+            <span class="dock-tooltip">Terminal</span>
+            <img src="assets/icons/terminal.png" alt="Terminal" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="mail" aria-label="Mail">
+            <span class="dock-tooltip">Mail</span>
+            <img src="assets/icons/mail.png" alt="Mail" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="settings" aria-label="Settings">
+            <span class="dock-tooltip">Settings</span>
+            <img src="assets/icons/settings.png" alt="Settings" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="spotify" aria-label="Spotify">
+            <span class="dock-tooltip">Spotify</span>
+            <img src="assets/icons/spotify.png" alt="Spotify" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="paint" aria-label="Paint Studio">
+            <span class="dock-tooltip">Paint Studio</span>
+            <img src="assets/icons/notes.png" alt="Paint Studio" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <span class="dock-divider" aria-hidden="true"></span>
+
+          <button type="button" class="dock-item" data-dock-window="projects" aria-label="Projects">
+            <span class="dock-tooltip">Projects</span>
+            <img src="assets/icons/download.png" alt="Projects" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <button type="button" class="dock-item" data-dock-window="bin" aria-label="Bin">
+            <span class="dock-tooltip">Bin</span>
+            <img src="assets/icons/bin.png" alt="Bin" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </nav>
-  </header>
 
-  <main>
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <svg style="position:absolute;width:0;height:0" aria-hidden="true">
-      <defs>
-        <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
-          <path d="M0.5,0 C0.7,0 0.86,0.08 0.94,0.22 C1,0.36 0.98,0.52 0.92,0.68 C0.86,0.84 0.74,0.98 0.58,1 C0.42,1 0.26,0.94 0.14,0.82 C0.04,0.7 0,0.56 0.02,0.4 C0.04,0.24 0.12,0.1 0.26,0.04 C0.38,0 0.44,0 0.5,0Z"/>
-        </clipPath>
-      </defs>
-    </svg>
+    <!-- Desktop Right-Click Context Menu -->
+    <div class="context-menu" id="context-menu" role="menu" hidden>
+      <button type="button" class="context-menu__item" data-ctx-action="open-profile">
+        <i class="fas fa-id-badge"></i> Open Profile Card
+      </button>
+      <button type="button" class="context-menu__item" data-ctx-action="open-finder">
+        <i class="far fa-folder-open"></i> Open Finder (About &amp; Skills)
+      </button>
+      <button type="button" class="context-menu__item" data-ctx-action="open-terminal">
+        <i class="fas fa-terminal"></i> Open Terminal
+      </button>
+      <div class="context-menu__sep"></div>
+      <button type="button" class="context-menu__item" data-ctx-action="toggle-theme">
+        <i class="fas fa-adjust"></i> Toggle Light / Dark Theme
+      </button>
+      <button type="button" class="context-menu__item" data-ctx-action="copy-email">
+        <i class="far fa-copy"></i> Copy Email (aryalsunily@gmail.com)
+      </button>
+    </div>
 
-    <section class="hero" id="home">
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
+    <!-- Toast Notification -->
+    <div class="mac-toast" id="mac-toast" role="status" aria-live="polite" hidden></div>
 
-      <div class="hero__container">
-        <div class="hero__text fade-up">
-          <p class="hero__greeting">Hi, I am</p>
-          <p class="hero__name">Sunil</p>
-          <p class="hero__intro">a <span class="typed-text"></span><span class="typed-cursor">|</span></p>
-          <p class="hero__desc">
-            Computer Science student at Ulsan University of Science and Technology, passionate about 
-            web development, AI, and modern software solutions.
-          </p>
-          <div class="hero__buttons">
-            <a href="#about" class="btn btn--primary">About</a>
-            <a href="#contact" class="btn btn--ghost">Contact Me</a>
-          </div>
-
-          <div class="hero__badges">
-            <span class="tech-badge" style="--i:0">HTML</span>
-            <span class="tech-badge" style="--i:1">CSS</span>
-            <span class="tech-badge" style="--i:2">JavaScript</span>
-            <span class="tech-badge" style="--i:3">Python</span>
-            <span class="tech-badge" style="--i:4">Java</span>
-            <span class="tech-badge" style="--i:5">MySQL</span>
-            <span class="tech-badge" style="--i:6">AI</span>
-          </div>
-
-          <div class="hero__stats">
-            <div class="hero__stat fade-up" data-count="15" data-suffix="+"><span class="stat-num">0</span> Projects Completed</div>
-            <div class="hero__stat fade-up" data-count="8" data-suffix="+"><span class="stat-num">0</span> Technologies Learned</div>
-            <div class="hero__stat fade-up" data-count="3" data-suffix="+"><span class="stat-num">0</span> Years of Experience</div>
-          </div>
-        </div>
-
-        <div class="hero__visual fade-up">
-          <div class="profile-card">
-            <div class="profile-card__inner">
-              <div class="profile-card__front">
-                <div class="profile-card__image-wrap">
-                  <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__image" />
-                </div>
-                <div class="profile-card__body">
-                  <div class="profile-body profile-body--home active">
-                    <h2 class="profile-body__name">Sunil Aryal</h2>
-                    <p class="profile-body__title">Passionate Programmer &middot; Web Developer</p>
-                    <button class="btn btn--primary touch-me-btn">Touch Me</button>
-                  </div>
-                  <div class="profile-body profile-body--about">
-                    <p class="profile-body__label">About</p>
-                    <p class="profile-body__text">IT student at Ulsan University of Science and Technology. Passionate about web development, AI, and modern software solutions.</p>
-                  </div>
-                  <div class="profile-body profile-body--education">
-                    <p class="profile-body__label">Education</p>
-                    <p class="profile-body__text">B.Tech in IT &middot; Ulsan University of Science and Technology (2025–Present)</p>
-                  </div>
-                  <div class="profile-body profile-body--skills">
-                    <p class="profile-body__label">Skills</p>
-                    <p class="profile-body__text">Frontend, Backend, AI &amp; ML &mdash; building modern digital solutions across the stack.</p>
-                  </div>
-                  <div class="profile-body profile-body--contact">
-                    <p class="profile-body__label">Contact</p>
-                    <p class="profile-body__text">aryalsunily@gmail.com &middot; Ulsan, South Korea</p>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-card__back">
-                <div class="profile-card__back-header">
-                  <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
-                  <span class="profile-card__back-user">Sunil Aryal</span>
-                </div>
-                <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
-                <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
-                <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
-                <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
-                <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
-                <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunily@gmail.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <div class="container">
-        <h2 class="section__title fade-up">About</h2>
-        <div class="about__grid">
-          <div class="about__content">
-            <p class="fade-up">
-              I'm Sunil Aryal, an IT student at Ulsan University of Science and Technology 
-              in South Korea. I'm driven by a curiosity for how technology works and a desire to build 
-              software that improves lives.
-            </p>
-            <p class="fade-up">
-              My interests span web development, database systems, and artificial intelligence. 
-              Currently focused on full-stack development and exploring AI integration in web applications.
-            </p>
-          </div>
-
-          <div class="hero-image">
-            <div class="blob">
-              <img src="assets/img/pro.png" alt="Profile Photo">
-            </div>
-
-            <div class="floating-card card1">
-              💻 Web Development
-            </div>
-            <div class="floating-card card2">
-              🤖 AI & Machine Learning
-            </div>
-            <div class="floating-card card3">
-              🎨 Graphic Design
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="education section" id="education">
-      <div class="container">
-        <h2 class="section__title fade-up">Education & Courses</h2>
-        <div class="education__list">
-          <div class="education__item fade-up">
-            <div class="education__dot"></div>
-            <div class="education__content">
-              <span class="education__year">2025 &ndash; Present</span>
-              <h3><i class="fas fa-graduation-cap"></i> B.Tech in Information Technology</h3>
-              <p>Ulsan University of Science and Technology, South Korea</p>
-            </div>
-          </div>
-          <div class="education__item fade-up">
-            <div class="education__dot"></div>
-            <div class="education__content">
-              <span class="education__year">2023 &ndash; 2025</span>
-              <h3><i class="fas fa-laptop-code"></i> External Courses</h3>
-              <p>Online certifications, bootcamps, and self-directed learning in web development, AI, and databases.</p>
-            </div>
-          </div>
-          <div class="education__item fade-up">
-            <div class="education__dot"></div>
-            <div class="education__content">
-              <span class="education__year">2021 &ndash; 2023</span>
-              <h3><i class="fas fa-school"></i> Higher Secondary Education (SLC)</h3>
-              <p>KMGSS, Butwal &mdash; Science (Physics, Chemistry, Mathematics, Biology)</p>
-            </div>
-          </div>
-          <div class="education__item fade-up">
-            <div class="education__dot"></div>
-            <div class="education__content">
-              <span class="education__year">2021</span>
-              <h3><i class="fas fa-school"></i> Secondary Education (SEE)</h3>
-              <p>Riyale Secondary School, Gulmi &mdash; Ranked first in the local level</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills section" id="skills">
-      <div class="skills__glow skills__glow--1"></div>
-      <div class="skills__glow skills__glow--2"></div>
-
-      <div class="container">
-        <div class="skills__header reveal">
-          <span class="skills__tag">Expertise</span>
-          <h2 class="section__title fade-up">Skills &amp; Technologies</h2>
-          <p class="skills__subtitle">Technologies I use to design, build, and deploy modern digital solutions.</p>
-        </div>
-
-        <div class="skills__grid">
-          <div class="skill-card reveal" data-delay="0">
-            <div class="skill-card__bg"></div>
-            <div class="skill-card__icon"><i class="fas fa-palette"></i></div>
-            <h3 class="skill-card__title">Frontend Development</h3>
-            <div class="skill-card__details">
-            <div class="skill-card__level">
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-label">Advanced</span>
-            </div>
-            <p class="skill-card__desc">Building responsive, accessible interfaces with modern frameworks and design systems.</p>
-            <div class="skill-card__tags">
-              <span class="tag featured">JavaScript</span>
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-            </div>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-delay="1">
-            <div class="skill-card__bg"></div>
-            <div class="skill-card__icon"><i class="fas fa-server"></i></div>
-            <h3 class="skill-card__title">Backend Development</h3>
-            <div class="skill-card__details">
-            <div class="skill-card__level">
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot"></span>
-              <span class="level-label">Intermediate</span>
-            </div>
-            <p class="skill-card__desc">Developing robust APIs and server-side applications with Java and Python.</p>
-            <div class="skill-card__tags">
-              <span class="tag featured">Java</span>
-              <span class="tag featured">Python</span>
-              <span class="tag">REST APIs</span>
-            </div>
-            </div>
-          </div>
-
-          <div class="skill-card featured-card reveal" data-delay="2">
-            <div class="skill-card__bg"></div>
-            <div class="skill-card__icon"><i class="fas fa-code"></i></div>
-            <h3 class="skill-card__title">Programming Languages</h3>
-            <div class="skill-card__details">
-            <div class="skill-card__level">
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-label">Advanced</span>
-            </div>
-            <p class="skill-card__desc">Writing clean, efficient code across multiple paradigms and platforms.</p>
-            <div class="skill-card__tags">
-              <span class="tag featured">Java</span>
-              <span class="tag featured">Python</span>
-              <span class="tag featured">JavaScript</span>
-              <span class="tag">SQL</span>
-            </div>
-            </div>
-          </div>
-
-          <div class="skills__row">
-          <div class="skill-card reveal" data-delay="3">
-            <div class="skill-card__bg"></div>
-            <div class="skill-card__icon"><i class="fas fa-database"></i></div>
-            <h3 class="skill-card__title">Database &amp; Tools</h3>
-            <div class="skill-card__details">
-            <div class="skill-card__level">
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot"></span>
-              <span class="level-label">Intermediate</span>
-            </div>
-            <p class="skill-card__desc">Designing data models and managing development infrastructure with modern tooling.</p>
-            <div class="skill-card__tags">
-              <span class="tag featured">MySQL</span>
-              <span class="tag">DB Design</span>
-              <span class="tag">Git &amp; GitHub</span>
-              <span class="tag">Linux</span>
-            </div>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-delay="4">
-            <div class="skill-card__bg"></div>
-            <div class="skill-card__icon"><i class="fas fa-brain"></i></div>
-            <h3 class="skill-card__title">AI &amp; Machine Learning</h3>
-            <div class="skill-card__details">
-            <div class="skill-card__level">
-              <span class="level-dot fill"></span>
-              <span class="level-dot fill"></span>
-              <span class="level-dot"></span>
-              <span class="level-dot"></span>
-              <span class="level-label">Exploring</span>
-            </div>
-            <p class="skill-card__desc">Exploring ML algorithms, data analysis, and AI integration for intelligent apps.</p>
-            <div class="skill-card__tags">
-              <span class="tag featured">Python</span>
-              <span class="tag">Data Analysis</span>
-              <span class="tag">Neural Nets</span>
-            </div>
-            </div>
-          </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="container">
-        <h2 class="section__title fade-up">Contact</h2>
-        <div class="contact__grid">
-          <div class="contact__info fade-up">
-            <p><i class="fas fa-envelope"></i> <a href="mailto:aryalsunily@gmail.com">aryalsunily@gmail.com</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/rudralization" target="_blank" rel="noopener">rudralization</a></p>
-            <p><i class="fab fa-linkedin-in"></i> <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener">rudralization</a></p>
-            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B" target="_blank" rel="noopener">@aryalsunil</a></p>
-            <p><i class="fas fa-map-pin"></i> Ulsan, South Korea</p>
-          </div>
-          <form class="contact__form fade-up" action="#" method="POST">
-            <div class="form__group">
-              <input type="text" name="name" id="name" placeholder="Your Name" required />
-            </div>
-            <div class="form__group">
-              <input type="email" name="email" id="email" placeholder="Your Email" required />
-            </div>
-            <div class="form__group">
-              <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary">Send</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="profile-card__back contact-card">
-        <div class="profile-card__back-header">
-          <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
-          <span class="profile-card__back-user">Sunil Aryal</span>
-        </div>
-        <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
-        <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
-        <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
-        <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
-        <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
-        <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunily@gmail.com</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2025 Sunil Aryal</p>
-      </div>
-    </footer>
-  </main>
+    <!-- Optional Liquid Glass Cursor -->
+    <div class="liquid-cursor" id="liquid-cursor" hidden></div>
+  </div>
 
   <script src="assets/js/script.js"></script>
 </body>
