@@ -19,17 +19,18 @@
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
   --mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Macintosh OS Light Theme */
-  --win-bg: rgba(255, 255, 255, 0.84);
-  --win-header: rgba(255, 255, 255, 0.65);
-  --win-border: rgba(0, 0, 0, 0.16);
-  --win-text: #111115;
-  --win-muted: #52525b;
-  --surface: rgba(0, 0, 0, 0.045);
-  --surface-hover: rgba(0, 0, 0, 0.08);
-  --menubar-bg: rgba(255, 255, 255, 0.68);
-  --tooltip-bg: #d8d8d8;
-  --tooltip-text: #111115;
+  /* macOS 27 Crystal Light Liquid Glass Theme */
+  --win-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.68) 0%, rgba(244, 246, 255, 0.52) 100%);
+  --win-header: linear-gradient(180deg, rgba(255, 255, 255, 0.56) 0%, rgba(255, 255, 255, 0.28) 100%);
+  --win-border: rgba(255, 255, 255, 0.52);
+  --win-rim: inset 0 1.5px 1.5px rgba(255, 255, 255, 0.82), inset 0 -1px 1px rgba(255, 255, 255, 0.25);
+  --win-text: #0f111a;
+  --win-muted: #475569;
+  --surface: rgba(255, 255, 255, 0.38);
+  --surface-hover: rgba(255, 255, 255, 0.58);
+  --menubar-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.56) 0%, rgba(240, 244, 255, 0.38) 100%);
+  --tooltip-bg: rgba(255, 255, 255, 0.78);
+  --tooltip-text: #0f111a;
 
   /* Exact Old Profile Card Variables (Light Mode) */
   --primary: #5a4bd1;
@@ -38,21 +39,22 @@
   --hero-text: #000000;
   --hero-text-secondary: #4a4a50;
   --hero-border: rgba(0, 0, 0, 0.15);
-  --hero-card: rgba(230, 229, 236, 0.92);
+  --hero-card: rgba(242, 241, 250, 0.88);
 }
 
 body.dark {
-  /* Macintosh OS Dark Theme */
-  --win-bg: rgba(26, 26, 32, 0.84);
-  --win-header: rgba(36, 36, 44, 0.72);
-  --win-border: rgba(255, 255, 255, 0.16);
-  --win-text: #f5f5f7;
-  --win-muted: #a1a1aa;
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-hover: rgba(255, 255, 255, 0.12);
-  --menubar-bg: rgba(18, 18, 24, 0.68);
-  --tooltip-bg: #252525;
-  --tooltip-text: #f5f5f7;
+  /* macOS 27 Spatial Dark Liquid Glass Theme */
+  --win-bg: linear-gradient(145deg, rgba(24, 26, 46, 0.66) 0%, rgba(16, 18, 34, 0.54) 100%);
+  --win-header: linear-gradient(180deg, rgba(42, 46, 78, 0.52) 0%, rgba(24, 26, 48, 0.34) 100%);
+  --win-border: rgba(255, 255, 255, 0.24);
+  --win-rim: inset 0 1.5px 1.5px rgba(255, 255, 255, 0.34), inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+  --win-text: #f8fafc;
+  --win-muted: #94a3b8;
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-hover: rgba(255, 255, 255, 0.16);
+  --menubar-bg: linear-gradient(135deg, rgba(22, 24, 44, 0.58) 0%, rgba(14, 16, 32, 0.44) 100%);
+  --tooltip-bg: rgba(20, 22, 40, 0.82);
+  --tooltip-text: #f8fafc;
 
   /* Exact Old Profile Card Variables (Dark Mode) */
   --primary: #7c6cf0;
@@ -60,8 +62,8 @@ body.dark {
   --hero-bg: #0A0A0A;
   --hero-text: #ffffff;
   --hero-text-secondary: rgba(255, 255, 255, 0.65);
-  --hero-border: rgba(255, 255, 255, 0.12);
-  --hero-card: rgba(24, 24, 32, 0.92);
+  --hero-border: rgba(255, 255, 255, 0.14);
+  --hero-card: rgba(22, 24, 38, 0.88);
 }
 
 html, body {
@@ -102,22 +104,28 @@ body.dark .desktop-wallpaper {
 }
 
 /* ============================================================
-   TOP MENU BAR (Macintosh OS style)
+   TOP MENU BAR (macOS 27 Floating Liquid Glass Capsule)
    ============================================================ */
 .menubar {
   position: relative;
   z-index: 900;
-  height: 34px;
-  padding: 0 14px;
+  height: 38px;
+  margin: 10px 16px 0;
+  padding: 0 16px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--menubar-bg);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--win-border);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid var(--win-border);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.2),
+    var(--win-rim);
   font-size: 0.82rem;
   color: var(--win-text);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .menubar__left,
@@ -244,6 +252,190 @@ body.dark .desktop-wallpaper {
 }
 
 /* ============================================================
+   macOS 27 LIQUID GLASS CONTROL CENTER POPOVER
+   ============================================================ */
+.macos27-cc {
+  position: fixed;
+  top: 56px;
+  right: 18px;
+  width: 310px;
+  padding: 14px;
+  border-radius: 26px;
+  background: var(--win-bg);
+  backdrop-filter: blur(38px) saturate(210%);
+  -webkit-backdrop-filter: blur(38px) saturate(210%);
+  border: 1px solid var(--win-border);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    var(--win-rim);
+  z-index: 960;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: winPop 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.macos27-cc[hidden] {
+  display: none !important;
+}
+
+.cc-grid-top {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 10px;
+}
+
+.cc-module {
+  background: var(--surface);
+  border: 1px solid var(--win-border);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.cc-module--connections {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cc-pill {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: none;
+  color: var(--win-text);
+  text-align: left;
+  cursor: pointer;
+  padding: 3px 4px;
+  border-radius: 12px;
+}
+
+.cc-pill__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(128, 128, 128, 0.22);
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  color: var(--win-text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.cc-pill.active .cc-pill__icon {
+  background: linear-gradient(135deg, #5a4bd1, #0ea5e9);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(90, 75, 209, 0.45);
+}
+
+.cc-pill__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.cc-pill__text strong {
+  font-size: 0.76rem;
+}
+
+.cc-pill__text small {
+  font-size: 0.66rem;
+  color: var(--win-muted);
+}
+
+.cc-module--quick {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cc-tile {
+  flex: 1;
+  border-radius: 14px;
+  border: 1px solid var(--win-border);
+  background: var(--surface-hover);
+  color: var(--win-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.cc-tile:hover {
+  transform: scale(1.03);
+}
+
+.cc-slider-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cc-range {
+  width: 100%;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.cc-wallpaper-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.cc-wp-btn {
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--win-border);
+  background: var(--surface);
+  color: var(--win-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cc-wp-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.centerpiece__os-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.os-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+/* ============================================================
    DESKTOP STAGE & CENTERPIECE TYPOGRAPHY
    ============================================================ */
 .desktop-stage {
@@ -348,26 +540,30 @@ body.dark .desktop-wallpaper {
 }
 
 .desktop-shortcut {
-  width: 78px;
-  padding: 6px 4px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  background: transparent;
+  width: 82px;
+  padding: 8px 6px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.45);
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .desktop-shortcut:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.65);
 }
 
 .desktop-shortcut img,
@@ -398,13 +594,25 @@ body.dark .desktop-wallpaper {
 
 .dock {
   position: relative;
-  padding: 8px 12px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(34px) saturate(210%);
+  -webkit-backdrop-filter: blur(34px) saturate(210%);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.34),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.72),
+    inset 0 -1.5px 2px rgba(255, 255, 255, 0.2);
+}
+
+body.dark .dock {
+  background: linear-gradient(135deg, rgba(28, 32, 58, 0.56) 0%, rgba(16, 18, 36, 0.42) 100%);
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.52),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.36),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.12);
 }
 
 .dock__items {
@@ -541,16 +749,19 @@ body.dark .desktop-wallpaper {
   min-width: 320px;
   min-height: 260px;
   background: var(--win-bg);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
   border: 1px solid var(--win-border);
-  border-radius: 16px;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28), 0 2px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 26px;
+  box-shadow:
+    0 28px 75px rgba(0, 0, 0, 0.34),
+    0 4px 16px rgba(0, 0, 0, 0.14),
+    var(--win-rim);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   pointer-events: auto;
-  animation: winPop 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: winPop 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .mac-window[hidden] {
@@ -577,8 +788,8 @@ body.dark .desktop-wallpaper {
 
 .mac-window__titlebar {
   position: relative;
-  height: 38px;
-  padding: 0 14px;
+  height: 44px;
+  padding: 0 16px;
   background: var(--win-header);
   border-bottom: 1px solid var(--win-border);
   display: flex;
@@ -596,6 +807,11 @@ body.dark .desktop-wallpaper {
   display: flex;
   align-items: center;
   gap: 7px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--win-border);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .traffic-light {

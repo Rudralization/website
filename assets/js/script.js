@@ -105,12 +105,79 @@
   updateClock();
   setInterval(updateClock, 1000);
 
-  /* -------------------- Network Status Button -------------------- */
+  /* -------------------- Network Status & macOS 27 Control Center -------------------- */
   const netBtn = document.getElementById('network-status-btn');
   netBtn?.addEventListener('click', () => {
     playSound('click');
     const online = navigator.onLine !== false;
     showToast(online ? 'Connection: Online (Ulsan, South Korea)' : 'Connection: Offline');
+  });
+
+  const ccBtn = document.getElementById('menubar-cc-btn');
+  const ccPanel = document.getElementById('macos27-cc');
+  const ccDarkTile = document.getElementById('cc-dark-tile');
+  const ccBrightness = document.getElementById('cc-brightness');
+  const ccBrightnessVal = document.getElementById('cc-brightness-val');
+  const ccSound = document.getElementById('cc-sound');
+  const ccSoundVal = document.getElementById('cc-sound-val');
+  const wallpaperEl = document.getElementById('desktop-wallpaper');
+  const wallpaperBtns = document.querySelectorAll('[data-wallpaper]');
+
+  ccBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    playSound('click');
+    if (ccPanel) ccPanel.hidden = !ccPanel.hidden;
+  });
+
+  ccPanel?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  window.addEventListener('click', () => {
+    if (ccPanel && !ccPanel.hidden) ccPanel.hidden = true;
+  });
+
+  ccPanel?.querySelectorAll('.cc-pill').forEach((pill) => {
+    pill.addEventListener('click', () => {
+      playSound('click');
+      pill.classList.toggle('active');
+    });
+  });
+
+  ccDarkTile?.addEventListener('click', () => {
+    playSound('click');
+    const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  ccBrightness?.addEventListener('input', () => {
+    const val = Number(ccBrightness.value || 100);
+    if (ccBrightnessVal) ccBrightnessVal.textContent = `${val}%`;
+    const desktopEl = document.getElementById('desktop');
+    if (desktopEl) {
+      desktopEl.style.filter = `brightness(${val / 100})`;
+    }
+  });
+
+  ccSound?.addEventListener('input', () => {
+    const val = Number(ccSound.value || 80);
+    if (ccSoundVal) ccSoundVal.textContent = `${val}%`;
+    const vol = (val / 100) * 0.25;
+    sounds.click.volume = vol;
+    sounds.swipe.volume = vol;
+    sounds.chime.volume = vol * 0.8;
+  });
+
+  wallpaperBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      playSound('click');
+      const src = btn.getAttribute('data-wallpaper');
+      if (src && wallpaperEl) {
+        wallpaperEl.src = src;
+        wallpaperBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-wallpaper') === src));
+        showToast('macOS 27 Wallpaper updated');
+      }
+    });
   });
 
   /* -------------------- Centerpiece Hover Letters (macintosh-os style) -------------------- */
