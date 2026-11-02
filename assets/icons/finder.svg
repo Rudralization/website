@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="finderLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2ea8ff"/>
+      <stop offset="100%" stop-color="#0068e5"/>
+    </linearGradient>
+    <linearGradient id="finderRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8f5ff"/>
+      <stop offset="100%" stop-color="#b4dcff"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect x="6" y="6" width="108" height="108" rx="25" ry="25"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <!-- Left blue half -->
+    <rect x="6" y="6" width="108" height="108" fill="url(#finderLeft)"/>
+    <!-- Right light half -->
+    <path d="M62 6 H114 V114 H56 C56 86 64 70 64 62 L55 62 C55 42 58 24 62 6 Z" fill="url(#finderRight)"/>
+    <!-- Center nose & dividing curve -->
+    <path d="M62 6 C58 26 55 43 55 62 L65 62 C65 76 57 93 56 114" fill="none" stroke="#1b4f9c" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Eyes -->
+    <ellipse cx="36" cy="43" rx="3.8" ry="6.8" fill="#123262"/>
+    <ellipse cx="84" cy="43" rx="3.8" ry="6.8" fill="#123262"/>
+    <!-- Smile -->
+    <path d="M32 75 Q60 95 88 75" fill="none" stroke="#123262" stroke-width="4.4" stroke-linecap="round"/>
+  </g>
+  <!-- Inner glass rim -->
+  <rect x="6.75" y="6.75" width="106.5" height="106.5" rx="24.5" ry="24.5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+</svg>

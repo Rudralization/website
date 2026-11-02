@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="igMesh" cx="30%" cy="107%" r="135%">
+      <stop offset="0%" stop-color="#ffd600"/>
+      <stop offset="12%" stop-color="#ff7a00"/>
+      <stop offset="48%" stop-color="#ff0069"/>
+      <stop offset="72%" stop-color="#d300c5"/>
+      <stop offset="100%" stop-color="#7638fa"/>
+    </radialGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="25" fill="url(#igMesh)"/>
+  <rect x="26" y="26" width="68" height="68" rx="19" fill="none" stroke="#ffffff" stroke-width="6.5"/>
+  <circle cx="60" cy="60" r="16.5" fill="none" stroke="#ffffff" stroke-width="6.5"/>
+  <circle cx="79" cy="41" r="4.5" fill="#ffffff"/>
+  <rect x="6.75" y="6.75" width="106.5" height="106.5" rx="24.5" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="1.5"/>
+</svg>

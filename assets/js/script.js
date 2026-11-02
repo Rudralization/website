@@ -524,7 +524,7 @@
   if (desktopShortcuts) {
     const shortcuts = [
       { label: 'Profile', img: 'assets/img/pro.png', windowId: 'profile' },
-      { label: 'Projects', img: 'assets/icons/download.png', windowId: 'projects' },
+      { label: 'Projects', img: 'assets/icons/projects.svg', windowId: 'projects' },
     ];
     shortcuts.forEach((sc) => {
       const btn = document.createElement('button');
