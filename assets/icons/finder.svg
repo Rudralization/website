@@ -1,30 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <linearGradient id="finderLeft" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2ea8ff"/>
-      <stop offset="100%" stop-color="#0068e5"/>
+    <!-- macOS 27 Liquid Glass Base Gradients -->
+    <linearGradient id="fgGlassBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f4ff" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#9bd8ff" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#3da2ff" stop-opacity="0.86"/>
     </linearGradient>
-    <linearGradient id="finderRight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#e8f5ff"/>
-      <stop offset="100%" stop-color="#b4dcff"/>
+    <linearGradient id="fgLeftFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2bb8ff" stop-opacity="0.92"/>
+      <stop offset="55%" stop-color="#007aff" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0048b5" stop-opacity="0.94"/>
     </linearGradient>
-    <clipPath id="squircle">
-      <rect x="6" y="6" width="108" height="108" rx="25" ry="25"/>
+    <linearGradient id="fgRightFace" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="60%" stop-color="#dff2ff" stop-opacity="0.84"/>
+      <stop offset="100%" stop-color="#a8daff" stop-opacity="0.88"/>
+    </linearGradient>
+    <!-- Liquid Glass Specular Sheen -->
+    <linearGradient id="fgSheen" x1="0%" y1="0%" x2="70%" y2="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.68"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Liquid Glass Prism Rim -->
+    <linearGradient id="fgRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#7dd3fc" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#1e40af" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+    </linearGradient>
+    <clipPath id="fgSquircle">
+      <rect x="14" y="14" width="228" height="228" rx="54"/>
     </clipPath>
+    <filter id="fgDrop" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#002b66" flood-opacity="0.35"/>
+    </filter>
   </defs>
-  <g clip-path="url(#squircle)">
-    <!-- Left blue half -->
-    <rect x="6" y="6" width="108" height="108" fill="url(#finderLeft)"/>
-    <!-- Right light half -->
-    <path d="M62 6 H114 V114 H56 C56 86 64 70 64 62 L55 62 C55 42 58 24 62 6 Z" fill="url(#finderRight)"/>
-    <!-- Center nose & dividing curve -->
-    <path d="M62 6 C58 26 55 43 55 62 L65 62 C65 76 57 93 56 114" fill="none" stroke="#1b4f9c" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Eyes -->
-    <ellipse cx="36" cy="43" rx="3.8" ry="6.8" fill="#123262"/>
-    <ellipse cx="84" cy="43" rx="3.8" ry="6.8" fill="#123262"/>
-    <!-- Smile -->
-    <path d="M32 75 Q60 95 88 75" fill="none" stroke="#123262" stroke-width="4.4" stroke-linecap="round"/>
+
+  <g clip-path="url(#fgSquircle)">
+    <!-- Frosted Glass Backdrop -->
+    <rect x="14" y="14" width="228" height="228" fill="url(#fgGlassBase)"/>
+    <!-- Right Glass Half -->
+    <rect x="14" y="14" width="228" height="228" fill="url(#fgRightFace)"/>
+    <!-- Left Curving Finder Face Half -->
+    <path d="M14 14 H140 C123 76 116 114 114 144 L138 144 C134 184 126 214 118 242 H14 Z" fill="url(#fgLeftFace)"/>
+    <!-- Center Nose Divider Glass Highlight -->
+    <path d="M140 14 C123 76 116 114 114 144 L138 144 C134 184 126 214 118 242" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 3D Liquid Glass Eyes -->
+    <g filter="url(#fgDrop)">
+      <rect x="68" y="76" width="16" height="34" rx="8" fill="#0f2547"/>
+      <rect x="71" y="80" width="5" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.65"/>
+      <rect x="172" y="76" width="16" height="34" rx="8" fill="#0f2547"/>
+      <rect x="175" y="80" width="5" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.65"/>
+      <!-- 3D Glass Smile -->
+      <path d="M68 164 C96 198 160 198 188 164" fill="none" stroke="#0f2547" stroke-width="13" stroke-linecap="round"/>
+      <path d="M70 162 C96 194 160 194 186 162" fill="none" stroke="#ffffff" stroke-width="3" stroke-opacity="0.55" stroke-linecap="round"/>
+    </g>
+
+    <!-- Top-Left Specular Liquid Glass Refraction -->
+    <path d="M14 14 H242 V105 C180 130 85 110 14 155 Z" fill="url(#fgSheen)"/>
+    <!-- Inner Bottom Glass Caustic Glow -->
+    <ellipse cx="128" cy="236" rx="90" ry="18" fill="#ffffff" fill-opacity="0.35"/>
   </g>
-  <!-- Inner glass rim -->
-  <rect x="6.75" y="6.75" width="106.5" height="106.5" rx="24.5" ry="24.5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+
+  <!-- Outer 3D Specular Glass Rim -->
+  <rect x="15.5" y="15.5" width="225" height="225" rx="52.5" fill="none" stroke="url(#fgRim)" stroke-width="3"/>
+  <rect x="18.5" y="18.5" width="219" height="219" rx="50" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1"/>
 </svg>

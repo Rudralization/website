@@ -1,11 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <linearGradient id="ghBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2b3137"/>
-      <stop offset="100%" stop-color="#0d1117"/>
+    <!-- macOS 27 Liquid Glass GitHub Icon -->
+    <linearGradient id="ghGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3f3f46" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#18181b" stop-opacity="0.86"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0.94"/>
     </linearGradient>
+    <linearGradient id="ghSheen" x1="0%" y1="0%" x2="70%" y2="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ghRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.72"/>
+    </linearGradient>
+    <clipPath id="ghClip">
+      <rect x="14" y="14" width="228" height="228" rx="54"/>
+    </clipPath>
+    <filter id="ghShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.48"/>
+    </filter>
   </defs>
-  <rect x="6" y="6" width="108" height="108" rx="25" fill="url(#ghBg)"/>
-  <path d="M60 22 C38.5 22 21 39.5 21 61 C21 78.2 32.2 92.8 47.7 98 C49.6 98.4 50.3 97.2 50.3 96.1 C50.3 95.2 50.3 92.1 50.2 88.8 C39.4 91.1 37.1 84.2 37.1 84.2 C35.3 79.7 32.7 78.5 32.7 78.5 C29.2 76.1 33 76.1 33 76.1 C36.9 76.4 39 80.1 39 80.1 C42.4 86.1 48.1 84.4 50.4 83.3 C50.7 80.8 51.8 79 52.9 78 C44.2 77 35.1 73.7 35.1 58.7 C35.1 54.4 36.6 50.9 39.1 48.2 C38.7 47.2 37.4 43.2 39.5 37.8 C39.5 37.8 42.8 36.7 50.2 41.8 C53.3 40.9 56.7 40.5 60 40.5 C63.3 40.5 66.7 40.9 69.8 41.8 C77.2 36.7 80.5 37.8 80.5 37.8 C82.6 43.2 81.3 47.2 80.9 48.2 C83.4 50.9 84.9 54.4 84.9 58.7 C84.9 73.7 75.8 77 67.1 78 C68.5 79.2 69.7 81.6 69.7 85.3 C69.7 90.6 69.7 94.8 69.7 96.1 C69.7 97.2 70.4 98.4 72.3 98 C87.8 92.8 99 78.2 99 61 C99 39.5 81.5 22 60 22 Z" fill="#ffffff"/>
-  <rect x="6.75" y="6.75" width="106.5" height="106.5" rx="24.5" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+
+  <g clip-path="url(#ghClip)">
+    <rect x="14" y="14" width="228" height="228" fill="url(#ghGlass)"/>
+    <!-- Ambient Purple/Indigo Glass Refraction Glow -->
+    <circle cx="128" cy="195" r="78" fill="#8b5cf6" fill-opacity="0.22"/>
+
+    <!-- 3D Liquid Glass GitHub Octocat Silhouette -->
+    <path filter="url(#ghShadow)" fill="#ffffff" fill-opacity="0.96" fill-rule="evenodd" clip-rule="evenodd"
+      d="M128 46C81.6 46 44 83.6 44 130C44 167.2 68.1 198.7 101.5 209.8C105.7 210.6 107.2 208 107.2 205.8C107.2 203.8 107.1 197.3 107.1 190.4C86 194.3 80.5 185.3 78.8 180.6C77.9 178.2 73.8 170.8 70.2 168.8C67.3 167.2 63.1 163.3 70.1 163.2C76.7 163.1 81.4 169.3 83 171.8C90.6 184.5 102.7 180.9 107.5 178.7C108.3 173.2 110.5 169.5 112.9 167.4C94.2 165.3 74.6 158.1 74.6 125.9C74.6 116.8 77.9 109.2 83.2 103.4C82.4 101.3 79.4 92.6 84 81C84 81 91.1 78.8 107.1 89.6C113.8 87.7 120.9 86.8 128 86.8C135.1 86.8 142.2 87.7 148.9 89.6C164.9 78.7 172 81 172 81C176.6 92.6 173.6 101.3 172.8 103.4C178.1 109.2 181.4 116.7 181.4 125.9C181.4 158.2 161.7 165.3 142.9 167.4C146 170 148.6 175 148.6 182.8C148.6 194 148.5 203 148.5 205.8C148.5 208 150 210.7 154.2 209.8C187.9 198.7 212 167.1 212 130C212 83.6 174.4 46 128 46Z"/>
+
+    <!-- Top-Left Liquid Glass Specular Sheen -->
+    <path d="M14 14 H242 V102 C180 128 85 108 14 150 Z" fill="url(#ghSheen)"/>
+  </g>
+
+  <rect x="15.5" y="15.5" width="225" height="225" rx="52.5" fill="none" stroke="url(#ghRim)" stroke-width="3"/>
 </svg>

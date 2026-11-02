@@ -264,15 +264,19 @@
 
   const DEFAULT_LAYOUT = {
     profile:   { left: 520, top: 96,  width: 300, height: 375 },
-    finder:    { left: 140, top: 64,  width: 580, height: 450 },
+    finder:    { left: 140, top: 64,  width: 580, height: 470 },
     launchpad: { left: 260, top: 80,  width: 560, height: 400 },
     photos:    { left: 220, top: 72,  width: 590, height: 450 },
     terminal:  { left: 250, top: 88,  width: 580, height: 390 },
-    mail:      { left: 290, top: 86,  width: 520, height: 410 },
+    mail:      { left: 290, top: 86,  width: 520, height: 400 },
     settings:  { left: 320, top: 78,  width: 480, height: 440 },
     spotify:   { left: 310, top: 84,  width: 500, height: 400 },
     paint:     { left: 240, top: 68,  width: 570, height: 420 },
     projects:  { left: 200, top: 70,  width: 600, height: 440 },
+    github:    { left: 230, top: 74,  width: 580, height: 430 },
+    instagram: { left: 270, top: 78,  width: 540, height: 430 },
+    whatsapp:  { left: 330, top: 82,  width: 480, height: 420 },
+    youtube:   { left: 250, top: 76,  width: 560, height: 430 },
     bin:       { left: 350, top: 110, width: 460, height: 320 },
   };
 
@@ -480,42 +484,32 @@
 
   /* -------------------- Desktop Shortcuts & Launchpad -------------------- */
   const LAUNCHPAD_ITEMS = [
-    { title: 'Profile Card', icon: 'fas fa-id-badge', bg: 'linear-gradient(135deg,#5a4bd1,#a29bfe)', windowId: 'profile' },
+    { title: 'Profile', icon: 'fas fa-id-badge', bg: 'linear-gradient(135deg,#5a4bd1,#a29bfe)', windowId: 'profile' },
     { title: 'Finder (Bio)', icon: 'fas fa-compass', bg: 'linear-gradient(135deg,#0984e3,#74b9ff)', windowId: 'finder' },
     { title: 'Education', icon: 'fas fa-graduation-cap', bg: 'linear-gradient(135deg,#f39c12,#f1c40f)', windowId: 'photos' },
     { title: 'Projects', icon: 'fas fa-folder-open', bg: 'linear-gradient(135deg,#00cec9,#81ecec)', windowId: 'projects' },
     { title: 'Terminal', icon: 'fas fa-terminal', bg: 'linear-gradient(135deg,#2d3436,#636e72)', windowId: 'terminal' },
-    { title: 'GitHub', icon: 'fab fa-github', bg: 'linear-gradient(135deg,#24292e,#4b5563)', url: 'https://github.com/rudralization' },
-    { title: 'LinkedIn', icon: 'fab fa-linkedin-in', bg: 'linear-gradient(135deg,#0077b5,#00a0dc)', url: 'https://linkedin.com/in/rudralization' },
-    { title: 'Instagram', icon: 'fab fa-instagram', bg: 'linear-gradient(135deg,#fd1d1d,#fcb045)', url: 'https://instagram.com/rudralization' },
-    { title: 'Facebook', icon: 'fab fa-facebook-f', bg: 'linear-gradient(135deg,#1877f2,#42a5f5)', url: 'https://facebook.com/rudralization' },
-    { title: 'YouTube', icon: 'fab fa-youtube', bg: 'linear-gradient(135deg,#ff0000,#c0392b)', url: 'https://youtube.com/@rudralization' },
-    { title: 'WhatsApp', icon: 'fab fa-whatsapp', bg: 'linear-gradient(135deg,#25d366,#128c7e)', url: 'https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B' },
-    { title: 'Email Sunil', icon: 'fas fa-envelope', bg: 'linear-gradient(135deg,#6c5ce7,#fd79a8)', windowId: 'mail' },
+    { title: 'GitHub', icon: 'fab fa-github', bg: 'linear-gradient(135deg,#24292e,#4b5563)', windowId: 'github' },
+    { title: 'Instagram', icon: 'fab fa-instagram', bg: 'linear-gradient(135deg,#fd1d1d,#fcb045)', windowId: 'instagram' },
+    { title: 'Mail', icon: 'fas fa-envelope', bg: 'linear-gradient(135deg,#6c5ce7,#fd79a8)', windowId: 'mail' },
+    { title: 'WhatsApp', icon: 'fab fa-whatsapp', bg: 'linear-gradient(135deg,#25d366,#128c7e)', windowId: 'whatsapp' },
+    { title: 'YouTube', icon: 'fab fa-youtube', bg: 'linear-gradient(135deg,#ff0000,#c0392b)', windowId: 'youtube' },
+    { title: 'Settings', icon: 'fas fa-cog', bg: 'linear-gradient(135deg,#64748b,#475569)', windowId: 'settings' },
+    { title: 'Bin', icon: 'fas fa-trash', bg: 'linear-gradient(135deg,#94a3b8,#64748b)', windowId: 'bin' },
   ];
 
   const launchpadGrid = document.getElementById('launchpad-grid');
   if (launchpadGrid) {
     LAUNCHPAD_ITEMS.forEach((item) => {
-      if (item.url) {
-        const a = document.createElement('a');
-        a.className = 'launchpad-app';
-        a.href = item.url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.innerHTML = `<span class="launchpad-app__icon" style="background:${item.bg}"><i class="${item.icon}"></i></span><span class="launchpad-app__title">${item.title}</span>`;
-        launchpadGrid.appendChild(a);
-      } else {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'launchpad-app';
-        btn.innerHTML = `<span class="launchpad-app__icon" style="background:${item.bg}"><i class="${item.icon}"></i></span><span class="launchpad-app__title">${item.title}</span>`;
-        btn.addEventListener('click', () => {
-          closeWindow('launchpad');
-          openWindow(item.windowId);
-        });
-        launchpadGrid.appendChild(btn);
-      }
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'launchpad-app';
+      btn.innerHTML = `<span class="launchpad-app__icon" style="background:${item.bg}"><i class="${item.icon}"></i></span><span class="launchpad-app__title">${item.title}</span>`;
+      btn.addEventListener('click', () => {
+        closeWindow('launchpad');
+        openWindow(item.windowId);
+      });
+      launchpadGrid.appendChild(btn);
     });
   }
 
@@ -558,23 +552,23 @@
       return [
         'Available commands:',
         '  whoami      — Display Sunil Aryal profile summary',
-        '  about       — About Sunil Aryal @ UNIST, South Korea',
+        '  about       — About Sunil Aryal @ Ulsan Science University, South Korea',
         '  skills      — List technical skills & proficiency',
         '  education   — View education timeline (2021–Present)',
         '  projects    — View stats & featured projects',
-        '  social      — List @rudralization social links',
-        '  contact     — Email, WhatsApp & location details',
-        '  card        — Open the exact Old Profile Card window',
-        '  open <app>  — Open window (profile, finder, photos, mail, settings, paint, spotify, projects)',
+        '  social      — List @rudralization social apps',
+        '  contact     — Email details',
+        '  card        — Open the Profile window',
+        '  open <app>  — Open window (profile, finder, photos, mail, settings, github, instagram, whatsapp, youtube, projects)',
         '  theme <m>   — Switch theme (theme light | theme dark)',
         '  ls, pwd, date, uptime, uname -a, cowsay, fortune, clear',
       ].join('\n');
     }
     if (lower === 'whoami') {
-      return 'Sunil Aryal (रुद्र.) — Passionate Programmer · Web Developer · IT Student @ UNIST, South Korea';
+      return 'Sunil Aryal (रुद्र.) — Passionate Programmer · Web Developer · IT Student @ Ulsan Science University, South Korea';
     }
     if (lower === 'about') {
-      return "I'm Sunil Aryal, an IT student at Ulsan University of Science and Technology (UNIST) in South Korea.\nPassionate about web development, database systems, and artificial intelligence.";
+      return "I'm Sunil Aryal, an IT student at Ulsan Science University in South Korea.\nPassionate about web development, database systems, and artificial intelligence.";
     }
     if (lower === 'skills') {
       return [
@@ -587,7 +581,7 @@
     }
     if (lower === 'education') {
       return [
-        '2025 – Present : B.Tech in Information Technology — Ulsan University of Science and Technology, South Korea',
+        '2025 – Present : B.Tech in Information Technology — Ulsan Science University, South Korea',
         '2023 – 2025    : External Courses — Web development, AI, and databases',
         '2021 – 2023    : Higher Secondary Education (SLC) — KMGSS, Butwal (Science)',
         '2021           : Secondary Education (SEE) — Riyale Secondary School, Gulmi (Ranked 1st locally)',
@@ -598,40 +592,39 @@
     }
     if (lower === 'social') {
       return [
-        'GitHub    : https://github.com/rudralization',
-        'LinkedIn  : https://linkedin.com/in/rudralization',
-        'Instagram : https://instagram.com/rudralization',
-        'Facebook  : https://facebook.com/rudralization',
-        'YouTube   : https://youtube.com/@rudralization',
+        'GitHub    : open github    (@rudralization)',
+        'Instagram : open instagram (@rudralization)',
+        'WhatsApp  : open whatsapp  (@aryalsunil)',
+        'YouTube   : open youtube   (@rudralization)',
       ].join('\n');
     }
     if (lower === 'contact') {
-      return 'Email: aryalsunily@gmail.com | WhatsApp: +977 9766812752 (@aryalsunil) | Location: Ulsan, South Korea';
+      return 'Email: aryalsunily@gmail.com';
     }
     if (lower === 'card') {
       openWindow('profile');
-      return 'Opened Old Profile Card window.';
+      return 'Opened Profile window.';
     }
     if (parts[0] === 'open' && parts[1]) {
       if (windows.has(parts[1])) {
         openWindow(parts[1]);
         return `Opened ${parts[1]}.`;
       }
-      return `open: unknown app "${parts[1]}". Try: profile, finder, photos, mail, settings, paint, spotify, projects`;
+      return `open: unknown app "${parts[1]}". Try: profile, finder, photos, mail, settings, github, instagram, whatsapp, youtube, projects`;
     }
     if (parts[0] === 'theme' && (parts[1] === 'dark' || parts[1] === 'light')) {
       applyTheme(parts[1]);
       return `Switched theme to ${parts[1]} mode.`;
     }
     if (lower === 'pwd') return '/Users/sunilaryal';
-    if (lower === 'ls') return 'ProfileCard.card  About.md  Education.md  Skills.json  Projects/  Contact.vcf';
+    if (lower === 'ls') return 'Profile.card  About.md  Education.md  Skills.json  Projects/  Contact.vcf';
     if (lower === 'date') return new Date().toString();
     if (lower === 'uptime') return 'up 365 days, 15+ projects completed, load averages: 1.42 1.18 1.05';
     if (lower === 'uname' || lower === 'uname -a') {
       return 'Darwin Sunils-MacBook-Pro.local 24.1.0 RudraOS Kernel Version 2026: arm64';
     }
     if (lower === 'fortune') {
-      return '"First, solve the problem. Then, write the code." — Sunil Aryal @ UNIST';
+      return '"First, solve the problem. Then, write the code." — Sunil Aryal @ Ulsan Science University';
     }
     if (lower.startsWith('cowsay')) {
       const msg = cmd.slice(6).trim() || 'Hello from Sunil Aryal!';
@@ -675,18 +668,54 @@
     }
   });
 
-  /* -------------------- Mail Form -------------------- */
+  /* -------------------- Mail Form & In-OS Apps (WhatsApp / YouTube) -------------------- */
   const mailForm = document.getElementById('mail-form');
   mailForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    playSound('click');
-    const subject = document.getElementById('mail-subject')?.value.trim() || 'Hello Sunil';
-    const from = document.getElementById('mail-from')?.value.trim() || '';
-    const message = document.getElementById('mail-message')?.value.trim() || '';
-    showToast('Opening mail client to aryalsunily@gmail.com…');
-    const body = encodeURIComponent(`From: ${from}\n\n${message}`);
-    window.open(`mailto:aryalsunily@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_self');
+    playSound('chime');
+    const subject = document.getElementById('mail-subject')?.value.trim() || 'Message';
+    showToast(`Message "${subject}" sent to aryalsunily@gmail.com`);
     mailForm.reset();
+  });
+
+  // In-OS WhatsApp Chat
+  const waForm = document.getElementById('wa-form');
+  const waInput = document.getElementById('wa-input');
+  const waMessages = document.getElementById('wa-messages');
+  waForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = waInput?.value.trim();
+    if (!text || !waMessages) return;
+    playSound('click');
+    const outBubble = document.createElement('div');
+    outBubble.className = 'wa-bubble wa-bubble--out';
+    outBubble.textContent = text;
+    waMessages.appendChild(outBubble);
+    waInput.value = '';
+    waMessages.scrollTop = waMessages.scrollHeight;
+
+    setTimeout(() => {
+      playSound('chime');
+      const reply = document.createElement('div');
+      reply.className = 'wa-bubble wa-bubble--in';
+      reply.textContent = "Thanks for reaching out! I've received your message and will get back to you soon.";
+      waMessages.appendChild(reply);
+      waMessages.scrollTop = waMessages.scrollHeight;
+    }, 550);
+  });
+
+  // In-OS YouTube Playlist Switcher
+  const ytTitleEl = document.getElementById('yt-playing-title');
+  const ytSubEl = document.getElementById('yt-playing-sub');
+  document.querySelectorAll('.yt-video-item').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      playSound('click');
+      document.querySelectorAll('.yt-video-item').forEach((b) => b.classList.toggle('active', b === btn));
+      const t = btn.getAttribute('data-yt-title');
+      const s = btn.getAttribute('data-yt-sub');
+      if (t && ytTitleEl) ytTitleEl.textContent = t;
+      if (s && ytSubEl) ytSubEl.textContent = s;
+    });
   });
 
   /* -------------------- Paint Studio -------------------- */

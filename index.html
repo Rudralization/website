@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunil Aryal | Macintosh OS Portfolio</title>
-  <meta name="description" content="Sunil Aryal (रुद्र.) — Computer Science & IT student at Ulsan University of Science and Technology, Passionate Programmer, Web Developer, and AI Explorer." />
+  <meta name="description" content="Sunil Aryal (रुद्र.) — Computer Science & IT student at Ulsan Science University, Passionate Programmer, Web Developer, and AI Explorer." />
   <meta name="author" content="Sunil Aryal" />
   <meta name="theme-color" content="#5a4bd1" />
 
@@ -54,6 +54,7 @@
         <nav class="menubar__menus" aria-label="Quick sections">
           <button type="button" class="menubar__menu-btn" data-open-window="finder">Finder</button>
           <button type="button" class="menubar__menu-btn" data-open-window="profile">Profile</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="photos">Education</button>
           <button type="button" class="menubar__menu-btn" data-open-window="projects">Projects</button>
           <button type="button" class="menubar__menu-btn" data-open-window="terminal">Terminal</button>
           <button type="button" class="menubar__menu-btn" data-open-window="mail">Contact</button>
@@ -61,10 +62,10 @@
       </div>
 
       <div class="menubar__right">
-        <a href="mailto:aryalsunily@gmail.com" class="menubar__email" title="Email Sunil Aryal">
+        <button type="button" class="menubar__email" data-open-window="mail" title="Mail Sunil Aryal">
           <i class="far fa-envelope"></i>
           <span>aryalsunily@gmail.com</span>
-        </a>
+        </button>
         <button
           type="button"
           class="menubar__status"
@@ -105,7 +106,7 @@
         <div class="cc-module cc-module--connections">
           <button type="button" class="cc-pill active" id="cc-wifi-btn">
             <span class="cc-pill__icon"><i class="fas fa-wifi"></i></span>
-            <span class="cc-pill__text"><strong>Wi-Fi</strong><small>UNIST-5G</small></span>
+            <span class="cc-pill__text"><strong>Wi-Fi</strong><small>USU-5G</small></span>
           </button>
           <button type="button" class="cc-pill active" id="cc-bt-btn">
             <span class="cc-pill__icon"><i class="fab fa-bluetooth-b"></i></span>
@@ -196,17 +197,22 @@
                   <div class="profile-card__body">
                     <div class="profile-body profile-body--home active">
                       <h2 class="profile-body__name">Sunil Aryal</h2>
-                      <p class="profile-body__title">Developer · UNIST</p>
+                      <p class="profile-body__title">Developer · Ulsan Science University</p>
                       <p class="profile-body__sub">Passionate Programmer &amp; Web Developer</p>
                       <button class="btn btn--primary touch-me-btn" id="touch-me-btn" type="button">Connect</button>
                     </div>
                     <div class="profile-body profile-body--about">
                       <p class="profile-body__label">About</p>
-                      <p class="profile-body__text">IT student at UNIST. Building clean web experiences and AI software.</p>
+                      <p class="profile-body__text">IT student at Ulsan Science University. Building clean web experiences and AI software.</p>
                     </div>
                     <div class="profile-body profile-body--education">
-                      <p class="profile-body__label">Education</p>
-                      <p class="profile-body__text">B.Tech in IT · UNIST, South Korea</p>
+                      <p class="profile-body__label">Education Journey</p>
+                      <div class="profile-edu-mini">
+                        <div><strong>2025–Present:</strong> B.Tech in IT · Ulsan Science University, South Korea</div>
+                        <div><strong>2023–2025:</strong> External Courses (Web, AI &amp; DB)</div>
+                        <div><strong>2021–2023:</strong> Higher Secondary (SLC) · KMGSS, Butwal</div>
+                        <div><strong>2021:</strong> Secondary (SEE) · Riyale Secondary School, Gulmi</div>
+                      </div>
                     </div>
                     <div class="profile-body profile-body--skills">
                       <p class="profile-body__label">Skills</p>
@@ -224,12 +230,12 @@
                     <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
                     <span class="profile-card__back-user">Sunil Aryal</span>
                   </div>
-                  <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> GitHub</a>
-                  <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> Instagram</a>
-                  <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> Mail</a>
-                  <a href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                  <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> YouTube</a>
-                  <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                  <button type="button" data-open-window="github" class="profile-card__link"><i class="fab fa-github"></i> GitHub</button>
+                  <button type="button" data-open-window="instagram" class="profile-card__link"><i class="fab fa-instagram"></i> Instagram</button>
+                  <button type="button" data-open-window="mail" class="profile-card__link"><i class="fas fa-envelope"></i> Mail</button>
+                  <button type="button" data-open-window="whatsapp" class="profile-card__link"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                  <button type="button" data-open-window="youtube" class="profile-card__link"><i class="fab fa-youtube"></i> YouTube</button>
+                  <button type="button" data-open-window="photos" class="profile-card__link"><i class="fas fa-graduation-cap"></i> Education Journey</button>
                 </div>
               </div>
             </div>
@@ -261,7 +267,7 @@
               <div class="finder-bio">
                 <h3>Sunil Aryal <span class="finder-badge">रुद्र.</span></h3>
                 <p>
-                  Computer Science &amp; Information Technology student at <strong>Ulsan University of Science and Technology (UNIST)</strong> in South Korea.
+                  Computer Science &amp; Information Technology student at <strong>Ulsan Science University</strong> in South Korea.
                   Driven by a curiosity for how technology works and a desire to build software that improves lives.
                 </p>
               </div>
@@ -269,15 +275,15 @@
 
             <div class="finder-actions">
               <button type="button" class="finder-pill" data-open-window="profile">
-                <i class="fas fa-id-badge"></i> Open Old Profile Card
+                <i class="fas fa-id-badge"></i> Open Profile
               </button>
               <button type="button" class="finder-pill" data-open-window="mail">
                 <i class="far fa-envelope"></i> Contact me
               </button>
-              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="finder-pill finder-pill--icon" title="GitHub @rudralization">
+              <button type="button" class="finder-pill finder-pill--icon" data-open-window="github" title="GitHub @rudralization">
                 <i class="fab fa-github"></i>
                 <i class="fas fa-star star-accent"></i>
-              </a>
+              </button>
             </div>
 
             <!-- Stats from Sunil's website -->
@@ -293,6 +299,43 @@
               <div class="finder-stat">
                 <span class="finder-stat__num">3+</span>
                 <span class="finder-stat__label">Years of Experience</span>
+              </div>
+            </div>
+
+            <!-- Full Education Journey inside Finder -->
+            <h4 class="finder-section-heading">Education &amp; Courses Journey</h4>
+            <div class="mac-timeline finder-timeline">
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2025 – Present</span>
+                  <h5><i class="fas fa-graduation-cap"></i> B.Tech in Information Technology</h5>
+                  <p>Ulsan Science University, South Korea</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2023 – 2025</span>
+                  <h5><i class="fas fa-laptop-code"></i> External Courses</h5>
+                  <p>Online certifications, bootcamps, and self-directed learning in web development, AI, and databases.</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2021 – 2023</span>
+                  <h5><i class="fas fa-school"></i> Higher Secondary Education (SLC)</h5>
+                  <p>KMGSS, Butwal — Science (Physics, Chemistry, Mathematics, Biology)</p>
+                </div>
+              </div>
+              <div class="mac-timeline__item">
+                <div class="mac-timeline__dot"></div>
+                <div class="mac-timeline__body">
+                  <span class="mac-timeline__year">2021</span>
+                  <h5><i class="fas fa-award"></i> Secondary Education (SEE)</h5>
+                  <p>Riyale Secondary School, Gulmi — Ranked first in the local level</p>
+                </div>
               </div>
             </div>
 
@@ -423,7 +466,7 @@
               <div class="photos-spotlight__text">
                 <h3>About Sunil Aryal</h3>
                 <p>
-                  I'm Sunil Aryal, an IT student at Ulsan University of Science and Technology in South Korea.
+                  I'm Sunil Aryal, an IT student at Ulsan Science University in South Korea.
                   My interests span web development, database systems, and artificial intelligence. Currently focused on
                   full-stack development and exploring AI integration in web applications.
                 </p>
@@ -437,7 +480,7 @@
                 <div class="mac-timeline__body">
                   <span class="mac-timeline__year">2025 – Present</span>
                   <h5><i class="fas fa-graduation-cap"></i> B.Tech in Information Technology</h5>
-                  <p>Ulsan University of Science and Technology, South Korea</p>
+                  <p>Ulsan Science University, South Korea</p>
                 </div>
               </div>
               <div class="mac-timeline__item">
@@ -530,23 +573,19 @@
               <div class="mail-row">
                 <span class="mail-label">To:</span>
                 <span class="mail-recipient">aryalsunily@gmail.com</span>
-                <a href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B" target="_blank" rel="noopener" class="mail-whatsapp">
-                  <i class="fab fa-whatsapp"></i> WhatsApp @aryalsunil
-                </a>
               </div>
               <div class="mail-row">
                 <label class="mail-label" for="mail-subject">Subject:</label>
-                <input type="text" id="mail-subject" placeholder="Enter subject" required />
+                <input type="text" id="mail-subject" required />
               </div>
               <div class="mail-row">
                 <label class="mail-label" for="mail-from">From:</label>
-                <input type="email" id="mail-from" placeholder="Your email address" required />
+                <input type="email" id="mail-from" required />
               </div>
               <div class="mail-body-wrap">
-                <textarea id="mail-message" rows="5" placeholder="Enter your message for Sunil Aryal (Ulsan, South Korea)..." required></textarea>
+                <textarea id="mail-message" rows="5" required></textarea>
               </div>
               <div class="mail-footer">
-                <span class="mail-location"><i class="fas fa-map-pin"></i> Ulsan, South Korea</span>
                 <button type="submit" class="mail-send-btn">
                   <i class="fas fa-paper-plane"></i> Send Message
                 </button>
@@ -656,35 +695,35 @@
               <div class="spotify-banner__info">
                 <h3>Rudralization</h3>
                 <p>Late-Night Coding · Full-Stack &amp; AI</p>
-                <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="spotify-follow-btn">Follow</a>
+                <button type="button" data-open-window="youtube" class="spotify-follow-btn">Follow</button>
               </div>
             </div>
             <div class="spotify-tracks">
               <h4>Focus Tracks &amp; Channels</h4>
-              <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="spotify-track">
+              <button type="button" data-open-window="youtube" class="spotify-track">
                 <span class="spotify-track__num">01</span>
                 <div class="spotify-track__meta">
                   <strong>Lo-Fi Beats to Code &amp; Debug To</strong>
-                  <span>UNIST Study Sessions</span>
+                  <span>Ulsan Science University Study Sessions</span>
                 </div>
                 <i class="fas fa-play-circle"></i>
-              </a>
-              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="spotify-track">
+              </button>
+              <button type="button" data-open-window="github" class="spotify-track">
                 <span class="spotify-track__num">02</span>
                 <div class="spotify-track__meta">
                   <strong>Neural Networks &amp; Midnight Coffee</strong>
                   <span>Python · AI &amp; ML Exploration</span>
                 </div>
                 <i class="fas fa-play-circle"></i>
-              </a>
-              <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="spotify-track">
+              </button>
+              <button type="button" data-open-window="projects" class="spotify-track">
                 <span class="spotify-track__num">03</span>
                 <div class="spotify-track__meta">
-                  <strong> shipping-to-production.wav</strong>
+                  <strong>shipping-to-production.wav</strong>
                   <span>Full-Stack Web Engineering</span>
                 </div>
                 <i class="fas fa-play-circle"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="resize-handle resize-handle--r" data-resize="r"></div>
@@ -761,7 +800,7 @@
                 </div>
                 <div class="project-card__body">
                   <h4>AI &amp; ML Web Integrations</h4>
-                  <span class="project-card__type">AI Research &amp; Apps · UNIST</span>
+                  <span class="project-card__type">AI Research &amp; Apps · Ulsan Science University</span>
                   <p>Intelligent web applications combining Python machine learning pipelines, data analysis, and modern web UIs.</p>
                   <div class="project-card__tags"><span>Python</span><span>AI/ML</span><span>REST APIs</span></div>
                 </div>
@@ -820,18 +859,239 @@
                 <i class="fas fa-id-card"></i>
                 <span>Old_Profile_Card_v1.card</span>
               </button>
-              <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="bin-item">
+              <button type="button" class="bin-item" data-open-window="finder">
                 <i class="fas fa-file-pdf"></i>
                 <span>Sunil_Aryal_Resume_2026.pdf</span>
-              </a>
-              <a href="https://rudralization.github.io/website/" target="_blank" rel="noopener" class="bin-item">
-                <i class="fas fa-file-code"></i>
-                <span>Classic_Portfolio_Backup.html</span>
-              </a>
+              </button>
+              <button type="button" class="bin-item" data-open-window="photos">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education_Journey.md</span>
+              </button>
               <div class="bin-item">
                 <i class="fas fa-mug-hot"></i>
                 <span>empty_coffee_cups (42).log</span>
               </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 12. GITHUB IN-OS WINDOW -->
+        <section
+          class="mac-window"
+          id="window-github"
+          data-window-id="github"
+          role="dialog"
+          aria-label="GitHub"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close GitHub"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize GitHub"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize GitHub"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">GitHub — @rudralization</span>
+          </div>
+          <div class="mac-window__content social-app-content">
+            <div class="social-app-header">
+              <img src="assets/img/pro.png" alt="Sunil Aryal" class="social-app-avatar" />
+              <div class="social-app-meta">
+                <h3>Sunil Aryal <span>@rudralization</span></h3>
+                <p>B.Tech in IT at Ulsan Science University · Full-Stack &amp; AI Developer</p>
+                <div class="social-app-stats">
+                  <span><strong>15+</strong> Repositories</span>
+                  <span><strong>8+</strong> Languages</span>
+                  <span><strong>South Korea</strong></span>
+                </div>
+              </div>
+            </div>
+            <h4 class="finder-section-heading">Pinned Repositories</h4>
+            <div class="gh-repo-grid">
+              <div class="gh-repo-card" data-open-window="projects">
+                <div class="gh-repo-top">
+                  <i class="fas fa-book-bookmark"></i>
+                  <strong>Rudralization/website</strong>
+                  <span class="gh-badge">Public</span>
+                </div>
+                <p>macOS 27 Liquid Glass interactive portfolio with zsh terminal, Finder, and 3D flip Profile.</p>
+                <div class="gh-repo-foot"><span><i class="fas fa-circle" style="color:#f1e05a"></i> JavaScript</span><span><i class="far fa-star"></i> 18</span></div>
+              </div>
+              <div class="gh-repo-card" data-open-window="projects">
+                <div class="gh-repo-top">
+                  <i class="fas fa-book-bookmark"></i>
+                  <strong>Rudralization/ai-web-studio</strong>
+                  <span class="gh-badge">Public</span>
+                </div>
+                <p>AI &amp; machine learning pipelines integrated with modern web interfaces at Ulsan Science University.</p>
+                <div class="gh-repo-foot"><span><i class="fas fa-circle" style="color:#3572A5"></i> Python</span><span><i class="far fa-star"></i> 14</span></div>
+              </div>
+              <div class="gh-repo-card" data-open-window="projects">
+                <div class="gh-repo-top">
+                  <i class="fas fa-book-bookmark"></i>
+                  <strong>Rudralization/db-management-core</strong>
+                  <span class="gh-badge">Public</span>
+                </div>
+                <p>Normalized MySQL relational database architecture with Java &amp; Python REST APIs.</p>
+                <div class="gh-repo-foot"><span><i class="fas fa-circle" style="color:#b07219"></i> Java</span><span><i class="far fa-star"></i> 11</span></div>
+              </div>
+              <div class="gh-repo-card" data-open-window="terminal">
+                <div class="gh-repo-top">
+                  <i class="fas fa-book-bookmark"></i>
+                  <strong>Rudralization/rudra-dotfiles</strong>
+                  <span class="gh-badge">Public</span>
+                </div>
+                <p>macOS zsh shell configurations, developer scripts, and minimal workflow tools.</p>
+                <div class="gh-repo-foot"><span><i class="fas fa-circle" style="color:#89e051"></i> Shell</span><span><i class="far fa-star"></i> 9</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 13. INSTAGRAM IN-OS WINDOW -->
+        <section
+          class="mac-window"
+          id="window-instagram"
+          data-window-id="instagram"
+          role="dialog"
+          aria-label="Instagram"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Instagram"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Instagram"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize Instagram"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">Instagram — @rudralization</span>
+          </div>
+          <div class="mac-window__content social-app-content">
+            <div class="social-app-header">
+              <img src="assets/img/pro.png" alt="Sunil Aryal" class="social-app-avatar social-app-avatar--insta" />
+              <div class="social-app-meta">
+                <h3>rudralization <span>Sunil Aryal (रुद्र.)</span></h3>
+                <p>Developer · Creator · IT @ Ulsan Science University, South Korea</p>
+                <div class="social-app-stats">
+                  <span><strong>15+</strong> Projects</span>
+                  <span><strong>Ulsan</strong> KR</span>
+                  <span><strong>Butwal / Gulmi</strong> NP</span>
+                </div>
+              </div>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-post" data-open-window="profile">
+                <img src="assets/img/pro.png" alt="Sunil Aryal Portrait" />
+                <div class="ig-post__overlay"><span><i class="fas fa-heart"></i> 240</span></div>
+              </div>
+              <div class="ig-post" data-open-window="photos">
+                <img src="assets/img/macos-monterey.jpg" alt="Ulsan Science University Journey" />
+                <div class="ig-post__overlay"><span><i class="fas fa-graduation-cap"></i> Education</span></div>
+              </div>
+              <div class="ig-post" data-open-window="projects">
+                <img src="assets/img/mountain-twilight.jpg" alt="Coding &amp; Projects" />
+                <div class="ig-post__overlay"><span><i class="fas fa-code"></i> Projects</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 14. WHATSAPP IN-OS WINDOW -->
+        <section
+          class="mac-window"
+          id="window-whatsapp"
+          data-window-id="whatsapp"
+          role="dialog"
+          aria-label="WhatsApp"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close WhatsApp"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize WhatsApp"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize WhatsApp"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">WhatsApp — Sunil Aryal</span>
+          </div>
+          <div class="mac-window__content wa-content">
+            <div class="wa-header">
+              <img src="assets/img/pro.png" alt="Sunil Aryal" class="wa-avatar" />
+              <div>
+                <strong>Sunil Aryal (@aryalsunil)</strong>
+                <span class="wa-status">Online · Ulsan Science University</span>
+              </div>
+            </div>
+            <div class="wa-messages" id="wa-messages">
+              <div class="wa-bubble wa-bubble--in">
+                Hi! 👋 I'm Sunil Aryal. Feel free to send me a message right here inside the app.
+              </div>
+            </div>
+            <form class="wa-input-bar" id="wa-form">
+              <input type="text" id="wa-input" class="wa-input" required />
+              <button type="submit" class="wa-send-btn" aria-label="Send WhatsApp Message">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          <div class="resize-handle resize-handle--r" data-resize="r"></div>
+          <div class="resize-handle resize-handle--b" data-resize="b"></div>
+          <div class="resize-handle resize-handle--br" data-resize="br"></div>
+        </section>
+
+        <!-- 15. YOUTUBE IN-OS WINDOW -->
+        <section
+          class="mac-window"
+          id="window-youtube"
+          data-window-id="youtube"
+          role="dialog"
+          aria-label="YouTube"
+          hidden
+        >
+          <div class="mac-window__titlebar" data-drag-handle>
+            <div class="traffic-lights">
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close YouTube"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize YouTube"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Maximize YouTube"><span>+</span></button>
+            </div>
+            <span class="mac-window__title">YouTube — @rudralization</span>
+          </div>
+          <div class="mac-window__content yt-content">
+            <div class="yt-stage" id="yt-stage">
+              <div class="yt-stage__screen">
+                <i class="fas fa-play-circle yt-stage__icon"></i>
+                <h4 id="yt-playing-title">Building macOS 27 Liquid Glass Portfolio</h4>
+                <p id="yt-playing-sub">Sunil Aryal (@rudralization) · Ulsan Science University</p>
+              </div>
+            </div>
+            <div class="yt-playlist">
+              <button type="button" class="yt-video-item active" data-yt-title="Building macOS 27 Liquid Glass Portfolio" data-yt-sub="Web Development · HTML5, CSS3 &amp; JavaScript">
+                <i class="fas fa-play"></i>
+                <div>
+                  <strong>Building macOS 27 Liquid Glass Portfolio</strong>
+                  <span>Web Development · HTML5, CSS3 &amp; JavaScript</span>
+                </div>
+              </button>
+              <button type="button" class="yt-video-item" data-yt-title="B.Tech IT Life at Ulsan Science University" data-yt-sub="Campus &amp; Coding Journey in South Korea">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                  <strong>B.Tech IT Life at Ulsan Science University</strong>
+                  <span>Campus &amp; Coding Journey in South Korea</span>
+                </div>
+              </button>
+              <button type="button" class="yt-video-item" data-yt-title="Python, AI &amp; Full-Stack Database Systems" data-yt-sub="AI Exploration &amp; MySQL Architecture">
+                <i class="fas fa-brain"></i>
+                <div>
+                  <strong>Python, AI &amp; Full-Stack Database Systems</strong>
+                  <span>AI Exploration &amp; MySQL Architecture</span>
+                </div>
+              </button>
             </div>
           </div>
           <div class="resize-handle resize-handle--r" data-resize="r"></div>
@@ -893,28 +1153,18 @@
           <span class="dock-divider" aria-hidden="true"></span>
 
           <!-- GitHub -->
-          <a
-            href="https://github.com/rudralization"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="dock-item"
-            aria-label="GitHub"
-          >
+          <button type="button" class="dock-item" data-dock-window="github" aria-label="GitHub">
             <span class="dock-tooltip">GitHub</span>
             <img src="assets/icons/github.svg" alt="GitHub" class="dock-icon" draggable="false" />
-          </a>
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
 
           <!-- Instagram -->
-          <a
-            href="https://instagram.com/rudralization"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="dock-item"
-            aria-label="Instagram"
-          >
+          <button type="button" class="dock-item" data-dock-window="instagram" aria-label="Instagram">
             <span class="dock-tooltip">Instagram</span>
             <img src="assets/icons/instagram.svg" alt="Instagram" class="dock-icon" draggable="false" />
-          </a>
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
 
           <!-- Mail -->
           <button type="button" class="dock-item" data-dock-window="mail" aria-label="Mail">
@@ -924,28 +1174,18 @@
           </button>
 
           <!-- WhatsApp -->
-          <a
-            href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="dock-item"
-            aria-label="WhatsApp"
-          >
+          <button type="button" class="dock-item" data-dock-window="whatsapp" aria-label="WhatsApp">
             <span class="dock-tooltip">WhatsApp</span>
             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="dock-icon" draggable="false" />
-          </a>
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
 
           <!-- YouTube -->
-          <a
-            href="https://youtube.com/@rudralization"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="dock-item"
-            aria-label="YouTube"
-          >
+          <button type="button" class="dock-item" data-dock-window="youtube" aria-label="YouTube">
             <span class="dock-tooltip">YouTube</span>
             <img src="assets/icons/youtube.svg" alt="YouTube" class="dock-icon" draggable="false" />
-          </a>
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
 
           <span class="dock-divider" aria-hidden="true"></span>
 

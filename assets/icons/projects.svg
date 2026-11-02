@@ -1,26 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <linearGradient id="folderBack" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3ab4ff"/>
-      <stop offset="100%" stop-color="#0b84eb"/>
+    <!-- macOS 27 Liquid Glass Folder Gradients -->
+    <linearGradient id="pgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.45"/>
     </linearGradient>
-    <linearGradient id="folderFront" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#7bd5ff"/>
-      <stop offset="45%" stop-color="#43b8ff"/>
-      <stop offset="100%" stop-color="#1592f5"/>
+    <linearGradient id="pgBackTab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.92"/>
     </linearGradient>
+    <linearGradient id="pgFrontGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.82"/>
+      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.76"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="pgSheen" x1="0%" y1="0%" x2="65%" y2="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pgRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.82"/>
+    </linearGradient>
+    <filter id="pgShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#082f49" flood-opacity="0.38"/>
+    </filter>
   </defs>
-  <!-- Folder back & tab -->
-  <path d="M12 28 C12 21.5 17.5 16 24 16 H45 C48.5 16 51.2 17.6 53.5 20.5 L57.5 25.5 C59.2 27.5 61.5 28.5 64.5 28.5 H96 C102.5 28.5 108 34 108 40.5 V92 C108 98.5 102.5 104 96 104 H24 C17.5 104 12 98.5 12 92 Z" fill="url(#folderBack)"/>
-  <!-- Subtle inner document sheet -->
-  <rect x="20" y="29" width="80" height="50" rx="8" fill="#ffffff" opacity="0.88"/>
-  <!-- Folder front flap -->
-  <rect x="10" y="36" width="100" height="68" rx="15" fill="url(#folderFront)"/>
-  <rect x="10.75" y="36.75" width="98.5" height="66.5" rx="14.2" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
-  <!-- Code / Projects emblem on front -->
-  <g fill="none" stroke="#0d5ea8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.65">
-    <polyline points="48 62 39 70 48 78"/>
-    <polyline points="72 62 81 70 72 78"/>
-    <line x1="63" y1="59" x2="57" y2="81"/>
+
+  <!-- Liquid Glass Squircle Base -->
+  <rect x="14" y="14" width="228" height="228" rx="54" fill="url(#pgBg)"/>
+
+  <!-- Back Folder Tab -->
+  <path d="M32 68 C32 54 43 43 57 43 H102 C111 43 118 47 123 54 L132 65 H199 C213 65 224 76 224 90 V192 C224 206 213 217 199 217 H57 C43 217 32 206 32 192 Z" fill="url(#pgBackTab)" filter="url(#pgShadow)"/>
+
+  <!-- Frosted White Document Sheet Peeking Out -->
+  <rect x="48" y="64" width="160" height="80" rx="14" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="64" y="76" width="84" height="8" rx="4" fill="#0284c7" fill-opacity="0.35"/>
+
+  <!-- Front Translucent Liquid Glass Folder Pocket -->
+  <rect x="28" y="84" width="200" height="134" rx="28" fill="url(#pgFrontGlass)" filter="url(#pgShadow)"/>
+  <!-- Pocket Specular Top Edge -->
+  <path d="M40 85.5 H216" stroke="#ffffff" stroke-width="3" stroke-opacity="0.85" stroke-linecap="round"/>
+  <!-- Pocket Glass Sheen -->
+  <path d="M28 84 H228 V142 C175 162 95 145 28 176 Z" fill="url(#pgSheen)" rx="28"/>
+
+  <!-- 3D Glass Code Symbol < / > -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" filter="url(#pgShadow)">
+    <path d="M100 133 L80 151 L100 169" stroke-width="8" stroke-opacity="0.95"/>
+    <path d="M156 133 L176 151 L156 169" stroke-width="8" stroke-opacity="0.95"/>
+    <path d="M136 126 L120 176" stroke-width="7" stroke-opacity="0.85"/>
   </g>
+
+  <!-- Outer Squircle Prism Rim -->
+  <rect x="15.5" y="15.5" width="225" height="225" rx="52.5" fill="none" stroke="url(#pgRim)" stroke-width="3"/>
 </svg>

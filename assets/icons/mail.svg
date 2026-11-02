@@ -1,16 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <linearGradient id="mailBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#0284c7"/>
+    <!-- macOS 27 Liquid Glass Mail Icon -->
+    <linearGradient id="mlGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#2563eb" stop-opacity="0.86"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.94"/>
     </linearGradient>
+    <linearGradient id="mlEnv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="mlSheen" x1="0%" y1="0%" x2="70%" y2="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mlRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#93c5fd" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+    </linearGradient>
+    <clipPath id="mlClip">
+      <rect x="14" y="14" width="228" height="228" rx="54"/>
+    </clipPath>
+    <filter id="mlShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#1e3a8a" flood-opacity="0.4"/>
+    </filter>
   </defs>
-  <rect x="6" y="6" width="108" height="108" rx="25" fill="url(#mailBg)"/>
-  <!-- Envelope body -->
-  <rect x="20" y="33" width="80" height="54" rx="10" fill="#ffffff"/>
-  <!-- Bottom fold lines -->
-  <path d="M22 84 L48 59 M98 84 L72 59" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
-  <!-- Top flap -->
-  <path d="M21 36 L55.5 64 C58.1 66.1 61.9 66.1 64.5 64 L99 36" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="6.75" y="6.75" width="106.5" height="106.5" rx="24.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+
+  <g clip-path="url(#mlClip)">
+    <rect x="14" y="14" width="228" height="228" fill="url(#mlGlass)"/>
+
+    <!-- 3D Liquid Glass Envelope -->
+    <g filter="url(#mlShadow)">
+      <rect x="44" y="68" width="168" height="120" rx="22" fill="url(#mlEnv)"/>
+      <path d="M48 76 L128 138 L208 76" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.85"/>
+    </g>
+
+    <!-- Top-Left Liquid Glass Specular Sheen -->
+    <path d="M14 14 H242 V102 C180 128 85 108 14 150 Z" fill="url(#mlSheen)"/>
+  </g>
+
+  <rect x="15.5" y="15.5" width="225" height="225" rx="52.5" fill="none" stroke="url(#mlRim)" stroke-width="3"/>
 </svg>
