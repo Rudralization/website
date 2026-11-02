@@ -41,23 +41,19 @@
     />
 
     <!-- ============================================================
-         TOP MENU BAR (macintosh-os style + Sunil Aryal identity)
+         TOP MENU BAR (Minimal macOS 27 with रुद्र. at Apple logo position)
          ============================================================ -->
     <header class="menubar" role="banner">
-      <div class="menubar__glass"></div>
       <div class="menubar__left">
         <a
           href="#profile"
-          class="menubar__brand"
+          class="menubar__apple-rudra"
           id="menubar-profile-trigger"
-          title="Open Profile Card"
-        >
-          <span class="menubar__badge">रुद्र<span class="menubar__dot">.</span></span>
-          <span class="menubar__name">Sunil Aryal</span>
-        </a>
+          title="Profile"
+        >रुद्र<span class="menubar__dot">.</span></a>
         <nav class="menubar__menus" aria-label="Quick sections">
           <button type="button" class="menubar__menu-btn" data-open-window="finder">Finder</button>
-          <button type="button" class="menubar__menu-btn" data-open-window="profile">Profile Card</button>
+          <button type="button" class="menubar__menu-btn" data-open-window="profile">Profile</button>
           <button type="button" class="menubar__menu-btn" data-open-window="projects">Projects</button>
           <button type="button" class="menubar__menu-btn" data-open-window="terminal">Terminal</button>
           <button type="button" class="menubar__menu-btn" data-open-window="mail">Contact</button>
@@ -158,55 +154,39 @@
     </aside>
 
     <!-- ============================================================
-         DESKTOP CENTERPIECE & SHORTCUTS
+         DESKTOP STAGE & MINIMAL SHORTCUTS
          ============================================================ -->
     <main class="desktop-stage" id="desktop-stage">
-      <!-- Desktop Shortcut Icons (top-left) -->
+      <!-- Desktop Shortcut Icons (top-left: Profile & Projects only) -->
       <div class="desktop-shortcuts" id="desktop-shortcuts" aria-label="Desktop shortcuts"></div>
-
-      <!-- Center Hero Typography (interactive per-letter hover like macintosh-os) -->
-      <div class="desktop-centerpiece">
-        <div class="centerpiece__os-pill">
-          <span class="os-pill__dot"></span>
-          <span>macOS 27 · Liquid Glass Edition</span>
-        </div>
-        <h1 class="centerpiece__title" id="centerpiece-title" aria-label="Sunil Aryal">
-          <!-- Populated dynamically with interactive hover letters -->
-          SuNiL ARyAL
-        </h1>
-        <p class="centerpiece__subtitle">
-          "a <span class="typed-text" id="typed-text">Developer</span><span class="typed-cursor">|</span> — crafting modern software &amp; AI solutions at UNIST, South Korea"
-        </p>
-      </div>
 
       <!-- ============================================================
            WINDOWS LAYER
            ============================================================ -->
       <div class="windows-layer" id="windows-layer">
 
-        <!-- 1. EXACT OLD DESIGN PROFILE CARD WINDOW (Opened via Profile icon on Dock) -->
+        <!-- 1. MINIMAL PROFILE WINDOW (Opened via Profile icon on Dock) -->
         <section
           class="mac-window mac-window--profile"
           id="window-profile"
           data-window-id="profile"
           role="dialog"
-          aria-label="Profile Card"
+          aria-label="Profile"
           hidden
         >
           <div class="mac-window__titlebar" data-drag-handle>
             <div class="traffic-lights">
-              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Profile Card"><span>✕</span></button>
-              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Profile Card"><span>−</span></button>
-              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Flip Profile Card" title="Flip Card"><span>↻</span></button>
+              <button type="button" class="traffic-light traffic-light--close" data-action="close" aria-label="Close Profile"><span>✕</span></button>
+              <button type="button" class="traffic-light traffic-light--minimize" data-action="minimize" aria-label="Minimize Profile"><span>−</span></button>
+              <button type="button" class="traffic-light traffic-light--maximize" data-action="maximize" aria-label="Flip Profile" title="Flip"><span>↻</span></button>
             </div>
-            <span class="mac-window__title">Profile Card — सुनील अर्याल</span>
-            <button type="button" class="profile-flip-pill" id="profile-flip-toggle" title="Flip between Front &amp; Social Links">
-              <i class="fas fa-sync-alt"></i> Flip
+            <span class="mac-window__title">Profile</span>
+            <button type="button" class="profile-flip-pill" id="profile-flip-toggle" title="Flip Profile">
+              <i class="fas fa-sync-alt"></i>
             </button>
           </div>
 
           <div class="mac-window__content mac-window__content--profile">
-            <!-- EXACT CARD USED IN OLD DESIGN -->
             <div class="profile-card" id="exact-profile-card">
               <div class="profile-card__inner" id="exact-profile-card-inner">
                 <div class="profile-card__front">
@@ -216,24 +196,25 @@
                   <div class="profile-card__body">
                     <div class="profile-body profile-body--home active">
                       <h2 class="profile-body__name">Sunil Aryal</h2>
-                      <p class="profile-body__title">Passionate Programmer · Web Developer</p>
-                      <button class="btn btn--primary touch-me-btn" id="touch-me-btn" type="button">Touch Me</button>
+                      <p class="profile-body__title">Developer · UNIST</p>
+                      <p class="profile-body__sub">Passionate Programmer &amp; Web Developer</p>
+                      <button class="btn btn--primary touch-me-btn" id="touch-me-btn" type="button">Connect</button>
                     </div>
                     <div class="profile-body profile-body--about">
                       <p class="profile-body__label">About</p>
-                      <p class="profile-body__text">IT student at Ulsan University of Science and Technology. Passionate about web development, AI, and modern software solutions.</p>
+                      <p class="profile-body__text">IT student at UNIST. Building clean web experiences and AI software.</p>
                     </div>
                     <div class="profile-body profile-body--education">
                       <p class="profile-body__label">Education</p>
-                      <p class="profile-body__text">B.Tech in IT · Ulsan University of Science and Technology (2025–Present)</p>
+                      <p class="profile-body__text">B.Tech in IT · UNIST, South Korea</p>
                     </div>
                     <div class="profile-body profile-body--skills">
                       <p class="profile-body__label">Skills</p>
-                      <p class="profile-body__text">Frontend, Backend, AI &amp; ML — building modern digital solutions across the stack.</p>
+                      <p class="profile-body__text">Frontend, Backend, Python, AI &amp; ML.</p>
                     </div>
                     <div class="profile-body profile-body--contact">
                       <p class="profile-body__label">Contact</p>
-                      <p class="profile-body__text">aryalsunily@gmail.com · Ulsan, South Korea</p>
+                      <p class="profile-body__text">aryalsunily@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -243,12 +224,12 @@
                     <img src="assets/img/pro.png" alt="Sunil Aryal" class="profile-card__back-img" />
                     <span class="profile-card__back-user">Sunil Aryal</span>
                   </div>
-                  <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> @rudralization</a>
-                  <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> @rudralization</a>
-                  <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> @rudralization</a>
-                  <a href="https://facebook.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-facebook-f"></i> @rudralization</a>
-                  <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> @rudralization</a>
-                  <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> aryalsunily@gmail.com</a>
+                  <a href="https://github.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-github"></i> GitHub</a>
+                  <a href="https://instagram.com/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-instagram"></i> Instagram</a>
+                  <a href="mailto:aryalsunily@gmail.com" class="profile-card__link"><i class="fas fa-envelope"></i> Mail</a>
+                  <a href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                  <a href="https://youtube.com/@rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-youtube"></i> YouTube</a>
+                  <a href="https://linkedin.com/in/rudralization" target="_blank" rel="noopener" class="profile-card__link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                 </div>
               </div>
             </div>
@@ -862,82 +843,121 @@
     </main>
 
     <!-- ============================================================
-         FLOATING macOS DOCK (with dedicated Profile Card Icon!)
+         FLOATING macOS DOCK (Minimal + Social Apps)
          ============================================================ -->
     <nav class="dock-container" aria-label="macOS Dock">
       <div class="dock" id="dock">
-        <div class="dock__glass with-lg"></div>
         <div class="dock__items">
-          <!-- PROFILE ICON ON DOCK — opens the exact Profile Card from the old design -->
+          <!-- Profile -->
           <button
             type="button"
             class="dock-item"
             data-dock-window="profile"
-            aria-label="Profile Card"
+            aria-label="Profile"
           >
-            <span class="dock-tooltip">Profile Card</span>
+            <span class="dock-tooltip">Profile</span>
             <span class="dock-icon dock-icon--profile">
-              <img src="assets/img/pro.png" alt="Profile Card" draggable="false" />
+              <img src="assets/img/pro.png" alt="Profile" draggable="false" />
             </span>
             <span class="dock-dot" aria-hidden="true"></span>
           </button>
 
+          <!-- Finder -->
           <button type="button" class="dock-item" data-dock-window="finder" aria-label="Finder">
             <span class="dock-tooltip">Finder</span>
             <img src="assets/icons/finder.png" alt="Finder" class="dock-icon" draggable="false" />
             <span class="dock-dot" aria-hidden="true"></span>
           </button>
 
-          <button type="button" class="dock-item" data-dock-window="launchpad" aria-label="Launchpad">
-            <span class="dock-tooltip">Launchpad</span>
-            <img src="assets/icons/launchpad.png" alt="Launchpad" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="photos" aria-label="Photos">
-            <span class="dock-tooltip">Photos</span>
-            <img src="assets/icons/photos.png" alt="Photos" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="terminal" aria-label="Terminal">
-            <span class="dock-tooltip">Terminal</span>
-            <img src="assets/icons/terminal.png" alt="Terminal" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="mail" aria-label="Mail">
-            <span class="dock-tooltip">Mail</span>
-            <img src="assets/icons/mail.png" alt="Mail" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="settings" aria-label="Settings">
-            <span class="dock-tooltip">Settings</span>
-            <img src="assets/icons/settings.png" alt="Settings" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="spotify" aria-label="Spotify">
-            <span class="dock-tooltip">Spotify</span>
-            <img src="assets/icons/spotify.png" alt="Spotify" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <button type="button" class="dock-item" data-dock-window="paint" aria-label="Paint Studio">
-            <span class="dock-tooltip">Paint Studio</span>
-            <img src="assets/icons/notes.png" alt="Paint Studio" class="dock-icon" draggable="false" />
-            <span class="dock-dot" aria-hidden="true"></span>
-          </button>
-
-          <span class="dock-divider" aria-hidden="true"></span>
-
+          <!-- Projects -->
           <button type="button" class="dock-item" data-dock-window="projects" aria-label="Projects">
             <span class="dock-tooltip">Projects</span>
             <img src="assets/icons/download.png" alt="Projects" class="dock-icon" draggable="false" />
             <span class="dock-dot" aria-hidden="true"></span>
           </button>
 
+          <!-- Terminal -->
+          <button type="button" class="dock-item" data-dock-window="terminal" aria-label="Terminal">
+            <span class="dock-tooltip">Terminal</span>
+            <img src="assets/icons/terminal.png" alt="Terminal" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <!-- Settings -->
+          <button type="button" class="dock-item" data-dock-window="settings" aria-label="Settings">
+            <span class="dock-tooltip">Settings</span>
+            <img src="assets/icons/settings.png" alt="Settings" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <span class="dock-divider" aria-hidden="true"></span>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/rudralization"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item"
+            aria-label="GitHub"
+          >
+            <span class="dock-tooltip">GitHub</span>
+            <span class="dock-icon dock-icon--social dock-icon--github">
+              <i class="fab fa-github"></i>
+            </span>
+          </a>
+
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/rudralization"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item"
+            aria-label="Instagram"
+          >
+            <span class="dock-tooltip">Instagram</span>
+            <span class="dock-icon dock-icon--social dock-icon--insta">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
+
+          <!-- Mail -->
+          <button type="button" class="dock-item" data-dock-window="mail" aria-label="Mail">
+            <span class="dock-tooltip">Mail</span>
+            <img src="assets/icons/mail.png" alt="Mail" class="dock-icon" draggable="false" />
+            <span class="dock-dot" aria-hidden="true"></span>
+          </button>
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/9779766812752?text=Hi%20Sunil%20%F0%9F%91%8B"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item"
+            aria-label="WhatsApp"
+          >
+            <span class="dock-tooltip">WhatsApp</span>
+            <span class="dock-icon dock-icon--social dock-icon--whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </span>
+          </a>
+
+          <!-- YouTube -->
+          <a
+            href="https://youtube.com/@rudralization"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item"
+            aria-label="YouTube"
+          >
+            <span class="dock-tooltip">YouTube</span>
+            <span class="dock-icon dock-icon--social dock-icon--yt">
+              <i class="fab fa-youtube"></i>
+            </span>
+          </a>
+
+          <span class="dock-divider" aria-hidden="true"></span>
+
+          <!-- Bin -->
           <button type="button" class="dock-item" data-dock-window="bin" aria-label="Bin">
             <span class="dock-tooltip">Bin</span>
             <img src="assets/icons/bin.png" alt="Bin" class="dock-icon" draggable="false" />
@@ -950,7 +970,7 @@
     <!-- Desktop Right-Click Context Menu -->
     <div class="context-menu" id="context-menu" role="menu" hidden>
       <button type="button" class="context-menu__item" data-ctx-action="open-profile">
-        <i class="fas fa-id-badge"></i> Open Profile Card
+        <i class="fas fa-id-badge"></i> Open Profile
       </button>
       <button type="button" class="context-menu__item" data-ctx-action="open-finder">
         <i class="far fa-folder-open"></i> Open Finder (About &amp; Skills)

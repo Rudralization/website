@@ -263,8 +263,8 @@
   const windows = new Map();
 
   const DEFAULT_LAYOUT = {
-    profile:   { left: 820, top: 64,  width: 340, height: 470 },
-    finder:    { left: 120, top: 58,  width: 580, height: 460 },
+    profile:   { left: 520, top: 96,  width: 300, height: 375 },
+    finder:    { left: 140, top: 64,  width: 580, height: 450 },
     launchpad: { left: 260, top: 80,  width: 560, height: 400 },
     photos:    { left: 220, top: 72,  width: 590, height: 450 },
     terminal:  { left: 250, top: 88,  width: 580, height: 390 },
@@ -519,14 +519,12 @@
     });
   }
 
-  // Desktop Top-Left Shortcut Icons
+  // Desktop Top-Left Shortcut Icons (Minimal: Profile & Projects only)
   const desktopShortcuts = document.getElementById('desktop-shortcuts');
   if (desktopShortcuts) {
     const shortcuts = [
-      { label: 'Profile Card', img: 'assets/img/pro.png', windowId: 'profile' },
-      { label: 'About Sunil', img: 'assets/icons/finder.png', windowId: 'finder' },
+      { label: 'Profile', img: 'assets/img/pro.png', windowId: 'profile' },
       { label: 'Projects', img: 'assets/icons/download.png', windowId: 'projects' },
-      { label: 'Education', img: 'assets/icons/photos.png', windowId: 'photos' },
     ];
     shortcuts.forEach((sc) => {
       const btn = document.createElement('button');
